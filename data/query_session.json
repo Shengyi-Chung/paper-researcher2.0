@@ -1,0 +1,48 @@
+{
+  "current_focus_papers": [
+    "Cubit: Token Mixer with Kernel Ridge Regression"
+  ],
+  "comparison_pair": [
+    "Cubit: Token Mixer with Kernel Ridge Regression",
+    "SoftSAE: Dynamic Top-K Selection for Adaptive Sparse Autoencoders"
+  ],
+  "active_keywords": [],
+  "recent_queries": [
+    "tell me more about Cubit",
+    "tell me more about Cubit",
+    "compare Cubit and SoftSAE",
+    "排行第一的论文的主要方法是什么",
+    "tell me more about Cubit"
+  ],
+  "recent_authors": [],
+  "selected_papers_for_report": [],
+  "paper_aliases": {},
+  "last_query_type": "paper_detail",
+  "last_resolved_references": {},
+  "conversation_turns": [
+    {
+      "user_query": "tell me more about Cubit",
+      "response_summary": "📄 **Cubit: Token Mixer with Kernel Ridge Regression**\n\n**ID:** 2605.06501v1\n**Authors:** Chuanyang Zheng, Jiankai Sun, Yihang Gao, Yuehao Wang, Liangchen Tan\n**Published:** 2026-05-07\n**Importance:** "
+    },
+    {
+      "user_query": "tell me more about Cubit",
+      "response_summary": "📄 **Cubit: Token Mixer with Kernel Ridge Regression**\n\n**ID:** 2605.06501v1\n**Authors:** Chuanyang Zheng, Jiankai Sun, Yihang Gao, Yuehao Wang, Liangchen Tan\n**Published:** 2026-05-07\n**Importance:** "
+    },
+    {
+      "user_query": "compare Cubit and SoftSAE",
+      "response_summary": "❓ I couldn't find papers matching \"compare Cubit and SoftSAE\"\n\n**Suggestions:**\n- Try different keywords\n- Use paper-search to retrieve more papers\n- Check if papers have been analyzed first"
+    },
+    {
+      "user_query": "compare Cubit and SoftSAE",
+      "response_summary": "## 📊 Paper Comparison\n\n| Aspect | Cubit: Token Mixer with Ker... | SoftSAE: Dynamic Top-K Sele... |\n|--------|-------------------------------|------------------------------|\n| **Title** | Cubit: Token"
+    },
+    {
+      "user_query": "排行第一的论文的主要方法是什么",
+      "response_summary": "**Related Papers:**\n\n1. **Cubit: Token Mixer with Kernel Ridge Regression**\n   - Authors: Chuanyang Zheng, Jiankai Sun\n   - Score: 0.1355\n\n2. **Long Context Pre-Training with Lighthouse Attention**\n  "
+    },
+    {
+      "user_query": "tell me more about Cubit",
+      "response_summary": "📄 **Cubit: Token Mixer with Kernel Ridge Regression**\n\n**ID:** 2605.06501v1\n**Authors:** Chuanyang Zheng, Jiankai Sun, Yihang Gao, Yuehao Wang, Liangchen Tan\n**Published:** 2026-05-07\n**Importance:** "
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "analysis_time": "2026-05-10T20:34:59.090422",
+  "query": "attention",
+  "total_papers": 15,
+  "weights": {
+    "similarity": 0.8,
+    "same_author": 0.2
+  },
+  "threshold": 0.3,
+  "pagerank_scores": [
+    {
+      "rank": 1,
+      "arxiv_id": "2605.06501v1",
+      "title": "Cubit: Token Mixer with Kernel Ridge Regression",
+      "authors": [
+        "Chuanyang Zheng",
+        "Jiankai Sun",
+        "Yihang Gao",
+        "Yuehao Wang",
+        "Liangchen Tan",
+        "Mac Schwager",
+        "Anderson Schneider",
+        "Yuriy Nevmyvaka",
+        "Xiaodong Liu"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.135535,
+      "connections": 4
+    },
+    {
+      "rank": 2,
+      "arxiv_id": "2605.06554v1",
+      "title": "Long Context Pre-Training with Lighthouse Attention",
+      "authors": [
+        "Bowen Peng",
+        "Subho Ghosh",
+        "Jeffrey Quesnelle"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.121947,
+      "connections": 5
+    },
+    {
+      "rank": 3,
+      "arxiv_id": "2605.06509v1",
+      "title": "FreeSpec: Training-Free Long Video Generation via Singular-Spectrum Reconstruction",
+      "authors": [
+        "Fangda Chen",
+        "Shanshan Zhao",
+        "Longrong Yang",
+        "Chuanfu Xu",
+        "Zhigang Luo",
+        "Long Lan"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.086471,
+      "connections": 3
+    },
+    {
+      "rank": 4,
+      "arxiv_id": "2605.06578v1",
+      "title": "Resource-Efficient CSI Prediction: A Gated Fusion and Factorized Projection Approach",
+      "authors": [
+        "Mohammad Hussain",
+        "Maedeh Adibag",
+        "Dilara Gurer",
+        "Gokhan Kalem",
+        "Kerim Serin",
+        "Sinem Coleri"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.086207,
+      "connections": 1
+    },
+    {
+      "rank": 5,
+      "arxiv_id": "2605.06447v1",
+      "title": "Scene-Adaptive Continual Learning for CSI-based Human Activity Recognition with Mixture of Experts",
+      "authors": [
+        "Wenhan Zheng",
+        "Yuyi Mao",
+        "Ivan Wang-Hei Ho"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.086207,
+      "connections": 1
+    },
+    {
+      "rank": 6,
+      "arxiv_id": "2605.06476v1",
+      "title": "Towards Emotion Consistency Analysis of Large Language Models in Emotional Conversational Contexts",
+      "authors": [
+        "Sneha Oram",
+        "Ojaswita Bhushan",
+        "Pushpak Bhattacharyya"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.082599,
+      "connections": 3
+    },
+    {
+      "rank": 7,
+      "arxiv_id": "2605.06611v1",
+      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
+      "authors": [
+        "Siquan Li",
+        "Kaiqi Jiang",
+        "Jiacheng Sun",
+        "Tianyang Hu"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.080856,
+      "connections": 3
+    },
+    {
+      "rank": 8,
+      "arxiv_id": "2605.06609v1",
+      "title": "Transformers Efficiently Perform In-Context Logistic Regression via Normalized Gradient Descent",
+      "authors": [
+        "Chenyang Zhang",
+        "Yuan Cao"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.070218,
+      "connections": 2
+    },
+    {
+      "rank": 9,
+      "arxiv_id": "2605.06537v1",
+      "title": "MedHorizon: Towards Long-context Medical Video Understanding in the Wild",
+      "authors": [
+        "Bodong Du",
+        "Bowen Liu",
+        "Yang Yu",
+        "Xinpeng Ding",
+        "Zhiheng Wu",
+        "Shuning Wang",
+        "Shuo Nie",
+        "Naiming Liu",
+        "Qifeng Chen",
+        "Yangqiu Song",
+        "Xiaomeng Li"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.070092,
+      "connections": 2
+    },
+    {
+      "rank": 10,
+      "arxiv_id": "2605.06446v1",
+      "title": "FedFrozen: Two-Stage Federated Optimization via Attention Kernel Freezing",
+      "authors": [
+        "Junye Du",
+        "Zhenghao Li",
+        "Yushi Feng",
+        "Long Feng"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.069504,
+      "connections": 2
+    },
+    {
+      "rank": 11,
+      "arxiv_id": "2605.06592v1",
+      "title": "DINORANKCLIP: DINOv3 Distillation and Injection for Vision-Language Pretraining with High-Order Ranking Consistency",
+      "authors": [
+        "Shuyang Jiang",
+        "Nan Yu",
+        "Yiming Zhang",
+        "Zenghui Ding",
+        "Zhenyu Wu"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.05864,
+      "connections": 2
+    },
+    {
+      "rank": 12,
+      "arxiv_id": "2605.06615v1",
+      "title": "When and Why SignSGD Outperforms SGD: A Theoretical Study Based on $\\ell_1$-norm Lower Bounds",
+      "authors": [
+        "Hongyi Tao",
+        "Dingzhi Yu",
+        "Lijun Zhang"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.012931,
+      "connections": 0
+    },
+    {
+      "rank": 13,
+      "arxiv_id": "2605.06481v1",
+      "title": "OA-WAM: Object-Addressable World Action Model for Robust Robot Manipulation",
+      "authors": [
+        "Yushan Liu",
+        "Peibo Sun",
+        "Shoujie Li",
+        "Yifan Xie",
+        "Lingfeng Zhang",
+        "Xintao Chao",
+        "Shiyuan Dong",
+        "Fang Chen",
+        "Xiao-Ping Zhang",
+        "Wenbo Ding"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.012931,
+      "connections": 0
+    },
+    {
+      "rank": 14,
+      "arxiv_id": "2605.06439v1",
+      "title": "From Review to Design: Ethical Multimodal Driver Monitoring Systems for Risk Mitigation, Incident Response, and Accountability in Automated Vehicles",
+      "authors": [
+        "Bilal Khana",
+        "Waseem Shariff",
+        "Rory Coyne",
+        "Muhammad Ali Farooq",
+        "Peter Corcoran"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.012931,
+      "connections": 0
+    },
+    {
+      "rank": 15,
+      "arxiv_id": "2605.06408v1",
+      "title": "Scalable GPU Construction of 3D Voronoi and Power Diagrams",
+      "authors": [
+        "Bernardo Taveira",
+        "Carl Lindström",
+        "Maryam Fatemi",
+        "Lars Hammarstrand",
+        "Fredrik Kahl"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.012931,
+      "connections": 0
+    }
+  ],
+  "network_stats": {
+    "nodes": 15,
+    "edges": 14,
+    "avg_clustering": 0.2089,
+    "density": 0.1333
+  }
+}

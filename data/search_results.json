@@ -1,0 +1,384 @@
+{
+  "query": "attention",
+  "search_time": "2026-05-10T20:34:52.143165",
+  "total_results": 15,
+  "max_results_requested": 15,
+  "sort_by": "submittedDate",
+  "papers": [
+    {
+      "arxiv_id": "2605.06615v1",
+      "title": "When and Why SignSGD Outperforms SGD: A Theoretical Study Based on $\\ell_1$-norm Lower Bounds",
+      "abstract": "Sign-based optimization algorithms, such as SignSGD and Muon, have garnered significant attention for their remarkable performance in training large foundation models. Despite this empirical success, we still lack a theoretical understanding of when and why these sign-based methods outperform vanilla SGD. The core obstacle is that under standard smoothness and finite variance conditions, SGD is known to be minimax optimal for finding stationary points measured by $\\ell_2$-norms, thereby fundamentally precluding any complexity gains for sign-based methods in standard settings. To overcome this barrier, we analyze sign-based optimizers leveraging $\\ell_1$-norm stationarity, $\\ell_\\infty$-smoothness, and a separable noise model, which can better capture the coordinate-wise nature of signed updates. Under this distinct problem geometry, we derive matched upper and lower bounds for SignSGD and explicitly characterize the problem class in which SignSGD provably dominates SGD. Specifically, we compare the \\emph{upper bound of SignSGD} with the \\emph{lower bound of SGD}, illustrating that SignSGD effectively reduces the complexity by a factor of $d$ under \\emph{sparse noise}, where $d$ is the problem dimension. Furthermore, we elevate this framework to the matrix domain, providing an equivalent optimal lower bound for the Muon optimizer, proving that extending the sign operator to matrices preserves this optimal scaling with dimensionality. Finally, we bridge our theoretical bounds to practice, demonstrating that the theoretical superiority of SignSGD accurately predicts its faster convergence during the pretraining of a 124M parameter GPT-2 model.",
+      "authors": [
+        "Hongyi Tao",
+        "Dingzhi Yu",
+        "Lijun Zhang"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "math.OC"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06615v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06615v1",
+      "comments": "Code is available at https://github.com/Dingzhen230/SignSGD_Outperforms_SGD",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06611v1",
+      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
+      "abstract": "Despite the prevalence of the attention sink phenomenon in Large Language Models (LLMs), where initial tokens disproportionately monopolize attention scores, its structural origins remain elusive. This work provides a \\textit{mechanistic explanation} for this phenomenon. First, we trace its root to the value aggregation process inherent in self-attention, which induces a systematic variance discrepancy. We further demonstrate that this discrepancy is drastically amplified by the activation of super neurons within Feed-Forward Network (FFN) layers. Specifically, the channel-sparse down-projections trigger a dimension disparity of the first-token representation, necessitating the formation of attention sinks as a structural anchor. Then, we validate this causal chain through two controlled interventions: (i) isolating the aggregation effect via attention mask modifications and (ii) amplifying the variance of targeted token representations. Both interventions can replicate attention sinks at arbitrary positions. Our mechanistic understanding offers a foundation for the systematic control of sink formation. Finally, as a proof of concept, we propose \\textit{head-wise RMSNorm}, an architectural modification that stabilizes value aggregation outputs during pre-training. Our experiments demonstrate that restoring statistical parity across positions significantly accelerates convergence.",
+      "authors": [
+        "Siquan Li",
+        "Kaiqi Jiang",
+        "Jiacheng Sun",
+        "Tianyang Hu"
+      ],
+      "author_count": 4,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06611v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06611v1",
+      "comments": "Accepted to ICML 2026",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06609v1",
+      "title": "Transformers Efficiently Perform In-Context Logistic Regression via Normalized Gradient Descent",
+      "abstract": "Transformers have demonstrated remarkable in-context learning (ICL) capabilities. The strong ICL performance of transformers is commonly believed to arise from their ability to implicitly execute certain algorithms on the context, thereby enhancing prediction and generation. In this work, we investigate how transformers with softmax attention perform in-context learning on linear classification data. We first construct a class of multi-layer transformers that can perform in-context logistic regression, with each layer exactly performing one step of normalized gradient descent on an in-context loss. Then, we show that our constructed transformer can be obtained through (i) training a single self-attention layer supervised by one-step gradient descent, and (ii) recurrently applying the trained layer to obtain a looped model. Training convergence guarantees of the self-attention layer and out-of-distribution generalization guarantees of the looped model are provided. Our results advance the theoretical understanding of ICL mechanism by showcasing how softmax transformers can effectively act as in-context learners.",
+      "authors": [
+        "Chenyang Zhang",
+        "Yuan Cao"
+      ],
+      "author_count": 2,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06609v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06609v1",
+      "comments": "94 pages, 8 figures",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06592v1",
+      "title": "DINORANKCLIP: DINOv3 Distillation and Injection for Vision-Language Pretraining with High-Order Ranking Consistency",
+      "abstract": "Contrastive language-image pretraining (CLIP) suffers from two structural weaknesses: the symmetric InfoNCE loss discards the relative ordering among unmatched in-batch pairs, and global pooling collapses the visual representation into a semantic bottleneck that is poorly sensitive to fine-grained local structure. RANKCLIP partially addresses the first issue with a list-wise Plackett-Luce ranking-consistency loss, but its model is strictly first-order and inherits the second weakness untouched. We propose DINORANKCLIP, a pretraining framework that addresses both jointly. Our principal contribution is injecting a frozen DINOv3 teacher into the contrastive trunk through a dual-branch lightweight student and a multi-scale fusion module with channel-spatial attention, a self-attention refiner, and a conflict-aware gate that preserves the cross-modal alignment up to first order. Complementarily, we introduce a high-order Plackett-Luce ranking model in which the per-position utility is augmented with attention-parameterised pairwise and tuple-wise transition terms; the family contains CLIP and RANKCLIP as nested zero-order and first-order special cases, and the optimal order on every benchmark is $R^*=3$. The full empirical study -- order sweep, Fine-grained Probe on five datasets, four-node Modality-Gap analysis, six-variant Fusion ablation -- fits in 72 hours on a single eight-GPU H100 node and trains entirely on Conceptual Captions 3M. DINORANKCLIP consistently outperforms CLIP, CyCLIP, ALIP, and RANKCLIP under matched compute, with the largest relative gains on the fine-grained and out-of-distribution evaluations that most directly stress local structural reasoning.",
+      "authors": [
+        "Shuyang Jiang",
+        "Nan Yu",
+        "Yiming Zhang",
+        "Zenghui Ding",
+        "Zhenyu Wu"
+      ],
+      "author_count": 5,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CV",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06592v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06592v1",
+      "comments": "18 pages, 7 figures, 9 tables. Code will be made publicly available upon acceptance",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06578v1",
+      "title": "Resource-Efficient CSI Prediction: A Gated Fusion and Factorized Projection Approach",
+      "abstract": "Accurate Channel State Information (CSI) prediction is essential for dynamic multiple-input multiple-output (MIMO) systems but remains computationally demanding. This letter proposes a resource-efficient predictor that combines a gated recurrent unit (GRU) encoder with Luong attention, a bottleneck gated fusion module, and a Dimension-wise Separable Linear Head (DSLH). The gated fusion module integrates local recurrent features with global attention context, while the DSLH reduces the cost of the output mapping. Evaluated on 3GPP TR 38.901-compliant channels, the proposed model achieves an average NMSE of -13.84 dB with 26% fewer parameters and approximately 2.3x higher inference throughput than a dimension-matched LinFormer baseline. The proposed model is best suited to LOS and mixed-condition scenarios, offering a practical accuracy-efficiency trade-off for short-horizon CSI prediction at moderate sequence lengths.",
+      "authors": [
+        "Mohammad Hussain",
+        "Maedeh Adibag",
+        "Dilara Gurer",
+        "Gokhan Kalem",
+        "Kerim Serin",
+        "Sinem Coleri"
+      ],
+      "author_count": 6,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "eess.SP"
+      ],
+      "primary_category": "eess.SP",
+      "doi": "10.1109/LCOMM.2026.3691476",
+      "pdf_url": "https://arxiv.org/pdf/2605.06578v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06578v1",
+      "comments": "Accepted for publication in IEEE Communications Letters. 5 pages, 2 figures",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06554v1",
+      "title": "Long Context Pre-Training with Lighthouse Attention",
+      "abstract": "Training causal transformers at extreme sequence lengths is bottlenecked by the quadratic time and memory of scaled dot-product attention (SDPA). In this work, we propose Lighthouse Attention, a training-only symmetrical selection-based hierarchical attention algorithm that wraps around ordinary SDPA and can be easily removed towards the end of the training. Our hierarchical selection is also gradient-free, which exempts us from dealing with a complicated and potentially inefficient backward pass kernel. Our contribution is three-fold: (i) A subquadratic hierarchical pre- and post-processing step that does adaptive compression and decompression of the sequence. (ii) A symmetrical compression strategy that pools queries, keys and values at the same time, while preserving left-to-right causality, which greatly improves parallelism. (iii) A two stage training approach which we pre-train for the majority of the time with Lighthouse Attention and recover a full attention model at the end with a short training. We run preliminary small scale LLM pre-training experiments that show the effectiveness of our method compared to full attention training with all other settings matched, where we achieve a faster total training time and lower final loss after the recovery phase. Full code is available at: https://github.com/ighoshsubho/lighthouse-attention",
+      "authors": [
+        "Bowen Peng",
+        "Subho Ghosh",
+        "Jeffrey Quesnelle"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06554v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06554v1",
+      "comments": "18 pages, 4 figures, 4 tables",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06537v1",
+      "title": "MedHorizon: Towards Long-context Medical Video Understanding in the Wild",
+      "abstract": "Medical multimodal large language models (MLLMs) have advanced image understanding and short-video analysis, but real clinical review often requires full-procedure video understanding. Unlike general long videos, medical procedures contain highly redundant anatomical views, while decisive evidence is temporally sparse, spatially subtle, and context dependent. Existing benchmarks often assume this evidence has already been localized through images, short clips, or pre-segmented videos, leaving the retrieval-before-reasoning problem under-tested. We introduce MedHorizon, an in-the-wild benchmark for long-context medical video understanding. MedHorizon preserves 759 hours of full-length clinical procedures and provides 1,253 evidence-grounded multiple-choice questionsthat jointly evaluate sparse evidence understanding and multi-hop clinical reasoning. Its evidence is extremely sparse, with only 0.166% evidence frames on average, requiring models to search noisy procedural streams before interpreting and aggregating findings. We evaluate representative general-domain, medical-domain, and long-video MLLMs. The best model reaches only 41.1% accuracy, showing that current systems remain far from robust full-procedure understanding. Further analysis yields four key findings: performance does not scale reliably with more frames, evidence retrieval and clinical interpretation remain primary bottlenecks; these bottlenecks are rooted in weak procedural reasoning and attention drift under redundancy, and generic sampling methods only partially balances local detail with global coverage. MedHorizon provides a rigorous testbed for MLLMs that retrieve sparse evidence and reason over complete clinical workflows.",
+      "authors": [
+        "Bodong Du",
+        "Bowen Liu",
+        "Yang Yu",
+        "Xinpeng Ding",
+        "Zhiheng Wu",
+        "Shuning Wang",
+        "Shuo Nie",
+        "Naiming Liu",
+        "Qifeng Chen",
+        "Yangqiu Song",
+        "Xiaomeng Li"
+      ],
+      "author_count": 11,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06537v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06537v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06509v1",
+      "title": "FreeSpec: Training-Free Long Video Generation via Singular-Spectrum Reconstruction",
+      "abstract": "Video diffusion models perform well in short-video synthesis, but their training-free extension to long videos often suffers from content drift, temporal inconsistency, and over-smoothed dynamics. Existing methods improve temporal consistency by combining a global branch with a local branch, but they often further decompose appearance consistency and temporal dynamics within each branch using predefined criteria. This assignment is unreliable when appearance and action progression are tightly coupled, such as in camera motion and sequential motion. We analyze the video temporal extension issue from a singular-spectrum perspective and show that enlarged self-attention windows induce spectral concentration: spectral energy becomes dominated by a few low-rank singular directions, preserving coarse structure but suppressing high-rank spatial details and motion-rich temporal variations. To mitigate this problem, we propose FreeSpec, a training-free spectral reconstruction framework for long-video generation. FreeSpec decomposes global and local features with singular value decomposition, and uses the global branch as low-rank spectral guidance and the local branch as a high-rank reconstruction basis. This spectrum-level fusion avoids the rigid feature partitioning of previous decomposition rules, preserving long-range consistency while better retaining spatial details and temporal dynamics. Experiments on Wan2.1 and LTX-Video demonstrate that FreeSpec improves long-video generation, especially for temporal dynamics, while maintaining strong visual quality and temporal consistency. Project demo: https://fdchen24.github.io/FreeSpec-Website/.",
+      "authors": [
+        "Fangda Chen",
+        "Shanshan Zhao",
+        "Longrong Yang",
+        "Chuanfu Xu",
+        "Zhigang Luo",
+        "Long Lan"
+      ],
+      "author_count": 6,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06509v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06509v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06501v1",
+      "title": "Cubit: Token Mixer with Kernel Ridge Regression",
+      "abstract": "Since its introduction in 2017, the Transformer has become one of the most widely adopted architectures in modern deep learning. Despite extensive efforts to improve positional encoding, attention mechanisms, and feed-forward networks, the core token-mixing mechanism in Transformers remains attention. In this work, we show that the attention module in Transformers can be interpreted as performing Nadaraya-Watson regression, where it computes similarities between tokens and aggregates the corresponding values accordingly. Motivated by this perspective, we propose Cubit, a potential next-generation architecture that leverages Kernel Ridge Regression (KRR), while the vanilla Transformer relies on Nadaraya-Watson regression. Specifically, Cubit modifies the classical attention computation by incorporating the closed-form solution of KRR, combining value aggregation through kernel similarities with normalization via the inverse of the kernel matrix. To improve the training stability, we further propose the Limited-Range Rescale (LRR), which rescales the value layer within a controlled range. We argue that Cubit, as a KRR-based architecture, provides a stronger mathematical foundation than the vanilla Transformer, whose attention mechanism corresponds to Nadaraya-Watson regression. We validate this claim through comprehensive experiments. The experimental results suggest that Cubit may exhibit stronger long-sequence modeling capability. In particular, its performance gain over the Transformer appears to increase as the training sequence length grows.",
+      "authors": [
+        "Chuanyang Zheng",
+        "Jiankai Sun",
+        "Yihang Gao",
+        "Yuehao Wang",
+        "Liangchen Tan",
+        "Mac Schwager",
+        "Anderson Schneider",
+        "Yuriy Nevmyvaka",
+        "Xiaodong Liu"
+      ],
+      "author_count": 9,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06501v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06501v1",
+      "comments": "Tech Report",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06481v1",
+      "title": "OA-WAM: Object-Addressable World Action Model for Robust Robot Manipulation",
+      "abstract": "World Action Models (WAMs) enhance Vision-Language-Action policies by jointly predicting scene evolution and robot actions, but existing methods usually represent the predicted world as holistic images, video tokens, or global latents. These representations are difficult for an action decoder to address when an instruction refers to a particular object, especially under scene shifts where object identity is entangled with context. We propose OA-WAM, an Object-Addressable World Action Model for robust robot manipulation. OA-WAM decomposes each frame into N+1 slot states, with one robot slot and N object slots. Each slot contains a persistent address vector and a time-varying content vector, and is fused with text, image, proprioception, and past-action tokens in a block-causal sequence. A world head predicts next-frame slot states, while a flow-matching action head decodes a 16-step continuous action chunk in the same forward pass. Addressability is enforced by routing cross-slot attention through address-only keys and resetting the address slice at every transformer layer, separating which object to act on from what that object currently is without adding extra tokens. OA-WAM matches strong VLA and WAM baselines on LIBERO (97.8%) and SimplerEnv (79.3%), reaches state-of-the-art performance on the most relevant LIBERO-Plus geometric axes, and remains competitive on the seven-axis aggregate. A causal slot-intervention test yields a swap-binding cosine of 0.87, versus at most 0.09 for holistic baselines. These results suggest that addressable object states provide an effective interface for robust world-action modeling under scene perturbations.",
+      "authors": [
+        "Yushan Liu",
+        "Peibo Sun",
+        "Shoujie Li",
+        "Yifan Xie",
+        "Lingfeng Zhang",
+        "Xintao Chao",
+        "Shiyuan Dong",
+        "Fang Chen",
+        "Xiao-Ping Zhang",
+        "Wenbo Ding"
+      ],
+      "author_count": 10,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.RO"
+      ],
+      "primary_category": "cs.RO",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06481v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06481v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06476v1",
+      "title": "Towards Emotion Consistency Analysis of Large Language Models in Emotional Conversational Contexts",
+      "abstract": "In this work, we conduct an analysis to examine the consistency of Large Language Models (LLMs) with respect to their own generated responses in an emotionally-driven conversational context. Specifically, the text generated by LLM is framed as a query to the same model, and its responses are subsequently assessed. This is performed with three queries across two dimensions of extreme and moderate emotions. The three queries are, in particular, false claim queries that contain inherently wrong assumptions (false presuppositions) in increasing order of intensity. Two commercial models, Claude-3.5-haiku, GPT4o-mini, and a medium-sized model, Mistral-7B, are considered in the study. Our findings indicate that LLMs exhibit below-average performance and remain vulnerable to false beliefs embedded within queries. This susceptibility is especially pronounced for moderate emotional content. Furthermore, an extended attention-score-based analysis highlights a shift in models' priority from evaluative to generative. The results raise important considerations for LLMs' deployment in high-stakes, emotionally sensitive contexts.",
+      "authors": [
+        "Sneha Oram",
+        "Ojaswita Bhushan",
+        "Pushpak Bhattacharyya"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06476v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06476v1",
+      "comments": "Under-review",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06447v1",
+      "title": "Scene-Adaptive Continual Learning for CSI-based Human Activity Recognition with Mixture of Experts",
+      "abstract": "Channel state information (CSI)-based human activity recognition (HAR) is vulnerable to performance degradation under domain shifts across varying physical environments. Continual learning (CL) offers a principled way to learn new domains sequentially while preserving past knowledge, but existing CL solutions for CSI-based HAR scale poorly with accumulating domains, rely on a large replay buffer, or incur linearly growing inference cost. In this letter, we propose Scene-Adaptive Mixture of Experts with Clustered Specialists (SAMoE-C), which formulates cross-domain CSI-based HAR as a mixture-of-experts system that enables scene-specific adaptation, via an attention-based semantic router that activates only selected experts for each input. Moreover, we develop a novel training protocol, which requires only a tiny replay buffer for stabilizing domain discrimination of the router. Experimental results on a four-scene CSI dataset demonstrate that SAMoE-C approaches the state-of-the-art accuracy, while maintaining a significantly lower inference cost. By jointly combining modular experts, selective activation with router and a lightweight training protocol, SAMoE-C enables scalable cross-domain CSI-based HAR deployment with low training overhead and high computational efficiency in real-world settings.",
+      "authors": [
+        "Wenhan Zheng",
+        "Yuyi Mao",
+        "Ivan Wang-Hei Ho"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06447v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06447v1",
+      "comments": "5 pages, 3 figures, 3 tables, this article was submitted to IEEE for possible publication",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06446v1",
+      "title": "FedFrozen: Two-Stage Federated Optimization via Attention Kernel Freezing",
+      "abstract": "Federated learning with heterogeneous clients remains a significant challenge for deep learning, primarily due to client drift arising from inconsistent local updates. Existing federated optimization methods typically address this issue through objective-level regularization or update-correction mechanisms. Recent studies, however, suggest that Transformer-based architectures may be inherently more robust than conventional models under heterogeneous federated training. Motivated by this observation, we investigate how different parameter components within the attention mechanism influence federated optimization. Specifically, we decompose the attention module into a query/key block, which determines the attention kernel, and a value block, which performs semantic transformation under the induced kernel. Based on this perspective, we propose FedFrozen, a two-stage federated optimization framework that first performs full-model warm-up training and then freezes the query/key block while continuing to optimize the value block. Under a linear-attention formulation, we show that the warm-up stage can be interpreted as an inexact descent procedure on a regularized kernel-profile objective, while the frozen stage reduces to a restricted value-block optimization problem under a fixed attention kernel. Our analysis further reveals an explicit trade-off that governs the choice of warm-up length. Simulations validate the predicted bias-drift behavior, and real-data experiments demonstrate that FedFrozen improves both the stability and effectiveness of Transformer models in heterogeneous federated learning.",
+      "authors": [
+        "Junye Du",
+        "Zhenghao Li",
+        "Yushi Feng",
+        "Long Feng"
+      ],
+      "author_count": 4,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06446v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06446v1",
+      "comments": "25 pages",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06439v1",
+      "title": "From Review to Design: Ethical Multimodal Driver Monitoring Systems for Risk Mitigation, Incident Response, and Accountability in Automated Vehicles",
+      "abstract": "As vehicles transition toward higher levels of automation, Driver Monitoring Systems (DMS) have become essential for ensuring human oversight, safety, and regulatory compliance in a vehicle. These systems rely on multimodal sensing and AI-driven inference to assess driver attention, cognitive state, and readiness to take control. While technologically promising, their deployment introduces a complex set of ethical and legal challenges - ranging from privacy and consent to data ownership and algorithmic fairness. While overarching frameworks such as the GDPR, EU AI Act, and IEEE standards offer important guidance, they lack the specificity required for addressing the unique risks posed by in-cabin sensing technologies. This paper adopts a review-to-design perspective, critically examining existing regulatory instruments and ethical frameworks -- such as the GDPR, the EU AI Act, and IEEE guidelines -- and identifying gaps in their applicability to the distinctive risks posed by multimodal, AI-enabled in-cabin monitoring. Building on this review, we propose a modular ethical design framework tailored specifically to Driver Monitoring Systems. The framework translates high-level principles into actionable design and deployment guidance, including user-configurable consent mechanisms, fairness-aware model development, transparency and explainability tools, and safeguards for driver emotional well-being. Finally, the paper outlines a risk analysis and failure mitigation strategy, emphasizing proactive incident response and accountability mechanisms tailored to the DMS context. Together, these contributions aim to inform the development of transparent, trustworthy, and human-centered driver monitoring systems for next-generation autonomous vehicles.",
+      "authors": [
+        "Bilal Khana",
+        "Waseem Shariff",
+        "Rory Coyne",
+        "Muhammad Ali Farooq",
+        "Peter Corcoran"
+      ],
+      "author_count": 5,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CY",
+        "cs.CV",
+        "cs.ET"
+      ],
+      "primary_category": "cs.CY",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06439v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06439v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06408v1",
+      "title": "Scalable GPU Construction of 3D Voronoi and Power Diagrams",
+      "abstract": "Voronoi diagrams, and their more general weighted counterpart, power diagrams, are fundamental geometric constructs with wide-ranging applications. Recently, they have gained renewed attention in mesh-based neural rendering. Despite being extensively studied, the construction of 3D Voronoi diagrams for large-scale point sets remains computationally expensive, limiting their adoption in large-scale applications. Existing CPU-based approaches typically rely on computing its dual, the Delaunay tetrahedralization, but are prohibitively slow for large diagrams, while GPU-based methods either struggle to scale efficiently to large point sets or assume homogeneous point distributions. The weighted case, power diagrams, is even less explored in this context. Existing approaches are typically tailored to the application at hand, assuming homogeneous point distributions and small weight variations, making them unsuitable for general use in more complex heterogeneous data. In this paper, we present a highly parallelizable GPU algorithm for the fast construction of large-scale 3D Voronoi and power diagrams. Our approach constructs each convex cell from a weighted 3D point by progressively clipping an initial cell volume against bisecting planes induced by candidate neighboring points. To efficiently identify candidate neighbors under arbitrary spatial distributions, we introduce a culling criterion based on directional geometric bounds of the evolving cell, combined with a hierarchical best-first traversal of bounding volumes. We achieve performance on par with state-of-the-art Delaunay tetrahedralization methods on small and moderate problem sizes, while exhibiting robust scalability to large point sets and diverse spatial distributions. Moreover, our method naturally generalizes to power diagrams without additional assumptions. See https://research.zenseact.com/publications/paragram .",
+      "authors": [
+        "Bernardo Taveira",
+        "Carl Lindström",
+        "Maryam Fatemi",
+        "Lars Hammarstrand",
+        "Fredrik Kahl"
+      ],
+      "author_count": 5,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CG"
+      ],
+      "primary_category": "cs.CG",
+      "doi": "10.1145/3799902.3811229",
+      "pdf_url": "https://arxiv.org/pdf/2605.06408v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06408v1",
+      "comments": null,
+      "journal_ref": null
+    }
+  ]
+}
