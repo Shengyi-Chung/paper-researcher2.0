@@ -1,0 +1,255 @@
+{
+  "query": "transformer architecture",
+  "search_time": "2026-05-10T22:50:29.653878",
+  "total_results": 10,
+  "max_results_requested": 10,
+  "sort_by": "submittedDate",
+  "papers": [
+    {
+      "arxiv_id": "2605.06665v1",
+      "title": "UniPool: A Globally Shared Expert Pool for Mixture-of-Experts",
+      "abstract": "Modern Mixture-of-Experts (MoE) architectures allocate expert capacity through a rigid per-layer rule: each transformer layer owns a separate expert set. This convention couples depth scaling with linear expert-parameter growth and assumes that every layer needs isolated expert capacity. However, recent analyses and our routing probe challenge this allocation rule: replacing a deeper layer's learned top-k router with uniform random routing drops downstream accuracy by only 1.0-1.6 points across multiple production MoE models. Motivated by this redundancy, we propose UniPool, an MoE architecture that treats expert capacity as a global architectural budget by replacing per-layer expert ownership with a single shared pool accessed by independent per-layer routers. To enable stable and balanced training under sharing, we introduce a pool-level auxiliary loss that balances expert utilization across the entire pool, and adopt NormRouter to provide sparse and scale-stable routing into the shared expert pool. Across five LLaMA-architecture model scales (182M, 469M, 650M, 830M, and 978M parameters) trained on 30B tokens from the Pile, UniPool consistently improves validation loss and perplexity over the matched vanilla MoE baselines. Across these scales, UniPool reduces validation loss by up to 0.0386 relative to vanilla MoE. Beyond raw loss improvement, our results identify pool size as an explicit depth-scaling hyperparameter: reduced-pool UniPool variants using only 41.6%-66.7% of the vanilla expert-parameter budget match or outperform layer-wise MoE at the tested scales. This shows that, under a shared-pool design, expert parameters need not grow linearly with depth; they can grow sublinearly while remaining more efficient and effective than vanilla MoE. Further analysis shows that UniPool's benefits compose with finer-grained expert decomposition.",
+      "authors": [
+        "Minbin Huang",
+        "Han Shi",
+        "Chuanyang Zheng",
+        "Yimeng Wu",
+        "Guoxuan Chen",
+        "Xintong Yu",
+        "Yichun Yin",
+        "Hong Cheng"
+      ],
+      "author_count": 8,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06665v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06665v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06663v1",
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "abstract": "Large language models are typically deployed as monolithic systems, requiring the full model even when applications need only a narrow subset of capabilities, e.g., code, math, or domain-specific knowledge. Mixture-of-Experts (MoEs) seemingly offer a potential alternative by activating only a subset of experts per input, but in practice, restricting inference to a subset of experts for a given domain leads to severe performance degradation. This limits their practicality in memory-constrained settings, especially as models grow larger and sparser. We introduce EMO, an MoE designed for modularity-the independent use and composition of expert subsets-without requiring human-defined priors. Our key idea is to encourage tokens from similar domains to rely on similar experts. Since tokens within a document often share a domain, EMO restricts them to select experts from a shared pool, while allowing different documents to use different pools. This simple constraint enables coherent expert groupings to emerge during pretraining using document boundaries alone. We pretrain a 1B-active, 14B-total EMO on 1T tokens. As a full model, it matches standard MoE performance. Crucially, it enables selective expert use: retaining only 25% (12.5%) of experts incurs just a 1% (3%) absolute drop, whereas standard MoEs break under the same setting. We further find that expert subsets in EMO specialize at semantic levels (e.g., domains such as math or code), in contrast to the low-level syntactic specialization observed in standard MoEs. Altogether, our results demonstrate a path toward modular, memory-efficient deployment of large, sparse models and open new opportunities for composable architectures.",
+      "authors": [
+        "Ryan Wang",
+        "Akshita Bhagia",
+        "Sewon Min"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06663v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06663v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06648v1",
+      "title": "A preliminary exploration of the effects of baseline length for the LIFE space mission",
+      "abstract": "By aiming to find and characterise dozens of habitable exoplanets through the technique of nulling interferometry, the LIFE space mission will produce transformational science. One of the key parameters for such an interferometric mission is the nulling baseline length - the distance between nulled apertures, which past studies have assumed to be 10-100m. Advances in planet occurrence statistics and simulation tools allow us now to revisit this key assumption with significantly more detail, particularly with the intention to reduce the range of baselines considered due to mission implementation concerns. We utilise the LIFEsim mission simulator along with revised mathematical tools to identify whether the range of baselines could be reduced without significantly affecting planet yield and fringe tracking performance. Along the way, we also determine a new astrophysically motivated technique for choosing which baselines are optimal for a given science target. We find that indeed, LIFE could utilise a considerably shorter range of baselines, such as 25-80m, or even discrete baselines without much (<10%) loss of performance. Nevertheless, careful trade-offs between performance and implementation simplification must be made, especially considering any spectral weighting that may be required by the scientific goals, and the potential loss of target-specific baseline optimisation.",
+      "authors": [
+        "Jonah T. Hansen",
+        "Thomas Birbacher",
+        "Felix A. Dannert",
+        "Philipp Huber",
+        "Andrea Fortier",
+        "Adrian M. Glauser",
+        "Jens Kammerer",
+        "Romain Laugier",
+        "Lia Sartori",
+        "Sascha P. Quanz"
+      ],
+      "author_count": 10,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "primary_category": "astro-ph.IM",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06648v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06648v1",
+      "comments": "32 pages, 20 figures, 1 table; Accepted for publication in the Publications of the Astronomical Society of the Pacific (PASP)",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06645v1",
+      "title": "Electrically controlled Heat Assisted Magnetic Recording in Intercalated 2D Magnets",
+      "abstract": "The ever-increasing demand for fast, reliable, and energy-efficient information storage continues to push magnetic memory technologies toward their fundamental limits. Conventional scaling strategies, which rely on reducing bit size, inevitably run into the \"magnetic recording trilemma,\" where signal-to-noise ratio, thermal stability, and writability cannot all be optimized simultaneously. Heat-assisted magnetic recording (HAMR) has emerged as the leading solution, enabling high-density storage by transiently heating the medium during the write cycle. However, the reliance on laser optics and plasmonic transducers restricts HAMR primarily to hard-disk drives, limiting its integration with on-chip or embedded architectures. Here, we demonstrate an electronic variant of HAMR in which Joule heating from low-current density current pulses facilitates data writing, while the anomalous Hall effect provides electronic readout. Employing intercalated 2D magnet Ni$_{1/4}$TaSe$_2$, we show direct evidence that current pulses heat the material above its Curie temperature, during which a small magnetic field of ~2mT (100 times smaller than the coercive field) enables efficient data writing. The all-electronic approach combined with the 2D magnetic medium creates timely opportunities to revisit the energy-assisted magnetization recording, enabling new recording schemes that combine fundamental novelty with technological impact.",
+      "authors": [
+        "Josue Rodriguez",
+        "Ruishi Qi",
+        "Catherine Xu",
+        "Feng Wang",
+        "James G. Analytis",
+        "Hossein Taghinejad"
+      ],
+      "author_count": 6,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cond-mat.mes-hall",
+        "cond-mat.mtrl-sci"
+      ],
+      "primary_category": "cond-mat.mes-hall",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06645v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06645v1",
+      "comments": "6 pages, 4 figures in main, supplement with 3 figures",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06644v1",
+      "title": "Edge-specific signal propagation on mature chromophore-region 3D mechanism graphs for fluorescent protein quantum-yield prediction",
+      "abstract": "Fluorescent protein quantum yield (QY) is governed by the mature chromophore and its three-dimensional microenvironment rather than sequence identity alone. Protein language models and emission-band averages capture global trends, but do not model how local physical signals act on specific chromophore regions. We present a chromophore-centred mechanism graph algorithm for QY prediction. Each PDB structure is converted into a typed 3D residue graph, registered to a mature-CRO state, partitioned into phenolate, bridge and imidazolinone regions, and transformed by channel-signal-region propagation. The representation contains 121 enrichment features; after removing identity shortcuts, 52 non-identity features are used for band-specific ExtraTrees regression. Because each feature encodes a contact channel, seed signal and target CRO region, interpretation is intrinsic rather than post hoc. On a 531-protein benchmark, the method achieved the best random-CV performance among model-based baselines (R = 0.772 +/- 0.008, MAE = 0.131 +/- 0.002), exceeding Band mean (R = 0.632), ESM-C (R = 0.734) and SaProt (R = 0.731), and ranked first in bright screening (Bright P@5 = 0.704). Under homology control, the advantage was clearest in the remote bucket (<50% similarity; R = 0.697 versus 0.633, 0.575 and 0.408), with the strongest overall bright/dark Top-K screening. Stable selected features recovered band-specific mechanisms: aromatic packing and clamp asymmetry in GFP-like proteins, charge/clamp balance in Red proteins, and flexibility-risk/bulky-contact features in Far-red proteins. Source code, feature tables and evaluation scripts are available from the first author upon request. Contact: yuchenak05@gmail.com",
+      "authors": [
+        "Yuchen Xiong",
+        "Swee Keong Yeap",
+        "Steven Aw Yoong Kit"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06644v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06644v1",
+      "comments": "Includes appendix; source code, processed feature tables and evaluation scripts are available from the first author upon reasonable request",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06628v1",
+      "title": "LiVeAction: a Lightweight, Versatile, and Asymmetric Neural Codec Design for Real-time Operation",
+      "abstract": "Modern sensors generate rich, high-fidelity data, yet applications operating on wearable or remote sensing devices remain constrained by bandwidth and power budgets. Standardized codecs such as JPEG and MPEG achieve efficient trade-offs between bitrate and perceptual quality but are designed for human perception, limiting their applicability to machine-perception tasks and non-traditional modalities such as spatial audio arrays, hyperspectral images, and 3D medical images. General-purpose compression schemes based on scalar quantization or resolution reduction are broadly applicable but fail to exploit inherent signal redundancies, resulting in suboptimal rate-distortion performance. Recent generative neural codecs, or tokenizers, model complex signal dependencies but are often over-parameterized, data-hungry, and modality-specific, making them impractical for resource-constrained environments. We introduce a Lightweight, Versatile, and Asymmetric neural codec architecture (LiVeAction), that addresses these limitations through two key ideas. (1) To reduce the complexity of the encoder to meet the resource constraints of the execution environments, we impose an FFT-like structure and reduce the overall size and depth of the neural-network-based analysis transform. (2) To allow arbitrary signal modalities and simplify training, we replace adversarial and perceptual losses with a variance-based rate penalty. Our design produces codecs that deliver superior rate-distortion performance compared to state-of-the-art generative tokenizers, while remaining practical for deployment on low-power sensors. We release our code, experiments, and python library at https://github.com/UT-SysML/liveaction .",
+      "authors": [
+        "Dan Jacobellis",
+        "Neeraja J. Yadwadkar"
+      ],
+      "author_count": 2,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "eess.IV",
+        "cs.LG",
+        "cs.MM",
+        "eess.AS",
+        "eess.SP"
+      ],
+      "primary_category": "eess.IV",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06628v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06628v1",
+      "comments": "DCC 2026",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06611v1",
+      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
+      "abstract": "Despite the prevalence of the attention sink phenomenon in Large Language Models (LLMs), where initial tokens disproportionately monopolize attention scores, its structural origins remain elusive. This work provides a \\textit{mechanistic explanation} for this phenomenon. First, we trace its root to the value aggregation process inherent in self-attention, which induces a systematic variance discrepancy. We further demonstrate that this discrepancy is drastically amplified by the activation of super neurons within Feed-Forward Network (FFN) layers. Specifically, the channel-sparse down-projections trigger a dimension disparity of the first-token representation, necessitating the formation of attention sinks as a structural anchor. Then, we validate this causal chain through two controlled interventions: (i) isolating the aggregation effect via attention mask modifications and (ii) amplifying the variance of targeted token representations. Both interventions can replicate attention sinks at arbitrary positions. Our mechanistic understanding offers a foundation for the systematic control of sink formation. Finally, as a proof of concept, we propose \\textit{head-wise RMSNorm}, an architectural modification that stabilizes value aggregation outputs during pre-training. Our experiments demonstrate that restoring statistical parity across positions significantly accelerates convergence.",
+      "authors": [
+        "Siquan Li",
+        "Kaiqi Jiang",
+        "Jiacheng Sun",
+        "Tianyang Hu"
+      ],
+      "author_count": 4,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06611v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06611v1",
+      "comments": "Accepted to ICML 2026",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06610v1",
+      "title": "SoftSAE: Dynamic Top-K Selection for Adaptive Sparse Autoencoders",
+      "abstract": "Sparse Autoencoders (SAEs) have become an important tool in mechanistic interpretability, helping to analyze internal representations in both Large Language Models (LLMs) and Vision Transformers (ViTs). By decomposing polysemantic activations into sparse sets of monosemantic features, SAEs aim to translate neural network computations into human-understandable concepts. However, common architectures such as TopK SAEs rely on a fixed sparsity level. They enforce the same number of active features (K) across all inputs, ignoring the varying complexity of real-world data. Natural data often lies on manifolds with varying local intrinsic dimensionality, meaning the number of relevant factors can change significantly across samples. This suggests that a fixed sparsity level is not optimal. Simple inputs may require only a few features, while more complex ones need more expressive representations. Using a constant K can therefore introduce noise in simple cases or miss important structure in more complex ones. To address this issue, we propose SoftSAE, a sparse autoencoder with a Dynamic Top-K selection mechanism. Our method uses a differentiable Soft Top-K operator to learn an input-dependent sparsity level k. This allows the model to adjust the number of active features based on the complexity of each input. As a result, the representation better matches the structure of the data, and the explanation length reflects the amount of information in the input. Experimental results confirm that SoftSAE not only finds meaningful features, but also selects the right number of features for each concept. The source code is available at: https://anonymous.4open.science/r/SoftSAE-8F71/.",
+      "authors": [
+        "Jakub Stępień",
+        "Marcin Mazur",
+        "Jacek Tabor",
+        "Przemysław Spurek"
+      ],
+      "author_count": 4,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06610v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06610v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06609v1",
+      "title": "Transformers Efficiently Perform In-Context Logistic Regression via Normalized Gradient Descent",
+      "abstract": "Transformers have demonstrated remarkable in-context learning (ICL) capabilities. The strong ICL performance of transformers is commonly believed to arise from their ability to implicitly execute certain algorithms on the context, thereby enhancing prediction and generation. In this work, we investigate how transformers with softmax attention perform in-context learning on linear classification data. We first construct a class of multi-layer transformers that can perform in-context logistic regression, with each layer exactly performing one step of normalized gradient descent on an in-context loss. Then, we show that our constructed transformer can be obtained through (i) training a single self-attention layer supervised by one-step gradient descent, and (ii) recurrently applying the trained layer to obtain a looped model. Training convergence guarantees of the self-attention layer and out-of-distribution generalization guarantees of the looped model are provided. Our results advance the theoretical understanding of ICL mechanism by showcasing how softmax transformers can effectively act as in-context learners.",
+      "authors": [
+        "Chenyang Zhang",
+        "Yuan Cao"
+      ],
+      "author_count": 2,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06609v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06609v1",
+      "comments": "94 pages, 8 figures",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06599v1",
+      "title": "Weight-Decay Turns Transformer Loss Landscapes Villani: Functional-Analytic Foundations for Optimization and Generalization",
+      "abstract": "Weight decay is widely used as a regularizer in large language models, yet its precise role in shaping Transformer loss landscapes remains theoretically underexplored. This paper provides the first rigorous functional-analytic characterization of the standard Transformer objective--cross-entropy loss with $L^2$ regularization--by proving it satisfies Villani's criteria for coercive energy functions. Specifically, we show that the regularized loss $\\mathcal{F}$ is infinitely differentiable, grows at least quadratically, has Gaussian-integrable tails, and satisfies the differential growth condition $-Δ\\mathcal{F} + \\tfrac{1}{s}\\|\\nabla\\mathcal{F}\\|^{2} \\to \\infty$ as $\\|θ\\| \\to \\infty$ for all $s>0$. From this structure, we derive explicit log-Sobolev and Poincaré constants $C_{\\mathrm{LS}} \\leq λ^{-1} + d/λ^{2}$, linking the regularization strength $λ$ and model dimension $d$ to finite-time convergence guarantees for noisy stochastic gradient descent and PAC-Bayesian generalization bounds that tighten with increasing $λ$. To validate our theory, we introduce a scalable Villani diagnostic $Ψ_s(θ) = -Δ\\mathcal{F} + s^{-1}\\|\\nabla \\mathcal{F}\\|^2$ and estimate it efficiently using Hutchinson trace probes in models with over 100M parameters. Experiments on GPT-Neo-125M across Penn Treebank and WikiText-103 confirm the predicted quadratic growth of $Ψ_s$, spectral inflation of the Hessian, and exponential convergence behavior consistent with our log-Sobolev analysis. These results demonstrate that weight decay not only improves generalization empirically but also establishes the mathematical conditions required for fast Langevin mixing and theoretically grounded curvature-aware optimization in deep learning.",
+      "authors": [
+        "Abhijit Das",
+        "Sayantan Dutta"
+      ],
+      "author_count": 2,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.LG",
+        "eess.AS"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06599v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06599v1",
+      "comments": "17 pages, 10 figures",
+      "journal_ref": null
+    }
+  ]
+}

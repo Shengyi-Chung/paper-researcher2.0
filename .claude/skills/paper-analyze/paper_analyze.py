@@ -32,7 +32,7 @@ def get_shared_data_dir() -> str:
 
 def load_search_results() -> Optional[Dict]:
     """Load search results from shared data directory"""
-    filepath = os.path.join(get_shared_data_dir(), "search_results.json")
+    filepath = os.path.join(get_shared_data_dir(), "papers.json")
     
     if not os.path.exists(filepath):
         safe_print(f"Error: Search results not found at {filepath}")
@@ -270,7 +270,7 @@ def analyze_papers(sim_weight: float = 0.8,
     
     # Save to shared data directory
     output_dir = get_shared_data_dir()
-    output_path = os.path.join(output_dir, 'analysis_results.json')
+    output_path = os.path.join(output_dir, 'paper_analysis.json')
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     

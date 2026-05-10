@@ -592,9 +592,19 @@ keyword_filter
 
 | Skill | Relationship |
 |---|---|
-| paper-search | upstream retrieval |
-| paper-analyze | primary structured input |
-| paper-report-generator | downstream report generation |
+| paper-search | upstream retrieval, outputs `data/papers.json` |
+| paper-analyze | primary structured input, outputs `data/paper_analysis.json` |
+| paper-report-generator | downstream report generation (optional) |
+
+## Downstream Skills (自动串联)
+
+`paper-qa` 是对话问答组件，通常在 `paper-report` 之后或独立使用：
+
+| 当前 skill | 前置 skill | 读取文件 |
+|-----------|-----------|---------|
+| `paper-qa` | `paper-search` + `paper-analyze` | `data/papers.json` + `data/paper_analysis.json` |
+
+**独立触发时：** 直接读取已有数据，无需完整工作流。
 
 ---
 

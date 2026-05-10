@@ -170,9 +170,9 @@ Same as v1.0: after paper-analyze, or on user request to generate a report.
 ## Error Handling
 | Error | Handling |
 |-------|----------|
-| paper_analysis.json not found | Request paper-analyze first |
-| paper_analysis.json empty | Inform user; suggest new search |
-| papers.json missing abstracts | Note unavailable; rely on analysis + export text |
+| `data/paper_analysis.json` not found | Request paper-analyze first |
+| `data/paper_analysis.json` empty | Inform user; suggest new search |
+| `data/papers.json` missing abstracts | Note unavailable; rely on analysis + export text |
 | export fetch failure | Store `export_error`; report still uses Layers A+B |
 | Missing Introduction/Methodology/Conclusion headings in HTML | Leave that excerpt blank; keep related ids from available regions |
 | Invalid JSON in inputs | Skip bad entries; log counts |

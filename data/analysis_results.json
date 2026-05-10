@@ -1,6 +1,6 @@
 {
-  "analysis_time": "2026-05-10T22:23:13.883411",
-  "query": "attention",
+  "analysis_time": "2026-05-10T22:44:10.648201",
+  "query": "natural language processing",
   "total_papers": 15,
   "weights": {
     "similarity": 0.8,
@@ -10,238 +10,234 @@
   "pagerank_scores": [
     {
       "rank": 1,
-      "arxiv_id": "2605.06501v1",
-      "title": "Cubit: Token Mixer with Kernel Ridge Regression",
+      "arxiv_id": "2605.06658v1",
+      "title": "Relit-LiVE: Relight Video by Jointly Learning Environment Video",
       "authors": [
-        "Chuanyang Zheng",
-        "Jiankai Sun",
-        "Yihang Gao",
-        "Yuehao Wang",
-        "Liangchen Tan",
-        "Mac Schwager",
-        "Anderson Schneider",
-        "Yuriy Nevmyvaka",
-        "Xiaodong Liu"
+        "Weiqing Xiao",
+        "Hong Li",
+        "Xiuyu Yang",
+        "Houyuan Chen",
+        "Wenyi Li",
+        "Tianqi Liu",
+        "Shaocong Xu",
+        "Chongjie Ye",
+        "Hao Zhao",
+        "Beibei Wang"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.135535,
-      "connections": 4
+      "pagerank_score": 0.135498,
+      "connections": 2
     },
     {
       "rank": 2,
-      "arxiv_id": "2605.06554v1",
-      "title": "Long Context Pre-Training with Lighthouse Attention",
+      "arxiv_id": "2605.06667v1",
+      "title": "ActCam: Zero-Shot Joint Camera and 3D Motion Control for Video Generation",
       "authors": [
-        "Bowen Peng",
-        "Subho Ghosh",
-        "Jeffrey Quesnelle"
+        "Omar El Khalifi",
+        "Thomas Rossi",
+        "Oscar Fossey",
+        "Thibault Fouque",
+        "Ulysse Mizrahi",
+        "Philip Torr",
+        "Ivan Laptev",
+        "Fabio Pizzati",
+        "Baptiste Bellot-Gurlet"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.121947,
-      "connections": 5
+      "pagerank_score": 0.133096,
+      "connections": 2
     },
     {
       "rank": 3,
-      "arxiv_id": "2605.06509v1",
-      "title": "FreeSpec: Training-Free Long Video Generation via Singular-Spectrum Reconstruction",
+      "arxiv_id": "2605.06638v1",
+      "title": "Can RL Teach Long-Horizon Reasoning to LLMs? Expressiveness Is Key",
       "authors": [
-        "Fangda Chen",
-        "Shanshan Zhao",
-        "Longrong Yang",
-        "Chuanfu Xu",
-        "Zhigang Luo",
-        "Long Lan"
+        "Tianle Wang",
+        "Zhaoyang Wang",
+        "Guangchen Lan",
+        "Xinpeng Wei",
+        "Sipeng Zhang",
+        "Guanwen Qiu",
+        "Abulhair Saparov"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.086471,
+      "pagerank_score": 0.124548,
       "connections": 3
     },
     {
       "rank": 4,
-      "arxiv_id": "2605.06578v1",
-      "title": "Resource-Efficient CSI Prediction: A Gated Fusion and Factorized Projection Approach",
+      "arxiv_id": "2605.06660v1",
+      "title": "Verifier-Backed Hard Problem Generation for Mathematical Reasoning",
       "authors": [
-        "Mohammad Hussain",
-        "Maedeh Adibag",
-        "Dilara Gurer",
-        "Gokhan Kalem",
-        "Kerim Serin",
-        "Sinem Coleri"
+        "Yuhang Lai",
+        "Jiazhan Feng",
+        "Yee Whye Teh",
+        "Ning Miao"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.086207,
-      "connections": 1
+      "pagerank_score": 0.117016,
+      "connections": 3
     },
     {
       "rank": 5,
-      "arxiv_id": "2605.06447v1",
-      "title": "Scene-Adaptive Continual Learning for CSI-based Human Activity Recognition with Mixture of Experts",
+      "arxiv_id": "2605.06663v1",
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
       "authors": [
-        "Wenhan Zheng",
-        "Yuyi Mao",
-        "Ivan Wang-Hei Ho"
+        "Ryan Wang",
+        "Akshita Bhagia",
+        "Sewon Min"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.086207,
+      "pagerank_score": 0.093023,
       "connections": 1
     },
     {
       "rank": 6,
-      "arxiv_id": "2605.06476v1",
-      "title": "Towards Emotion Consistency Analysis of Large Language Models in Emotional Conversational Contexts",
+      "arxiv_id": "2605.06654v1",
+      "title": "Optimizer-Model Consistency: Full Finetuning with the Same Optimizer as Pretraining Forgets Less",
       "authors": [
-        "Sneha Oram",
-        "Ojaswita Bhushan",
-        "Pushpak Bhattacharyya"
+        "Yuxing Liu",
+        "Jianyu Wang",
+        "Tong Zhang"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.082599,
-      "connections": 3
+      "pagerank_score": 0.093023,
+      "connections": 1
     },
     {
       "rank": 7,
-      "arxiv_id": "2605.06611v1",
-      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
+      "arxiv_id": "2605.06642v1",
+      "title": "StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction",
       "authors": [
-        "Siquan Li",
-        "Kaiqi Jiang",
-        "Jiacheng Sun",
-        "Tianyang Hu"
+        "Xiangyuan Xue",
+        "Yifan Zhou",
+        "Zidong Wang",
+        "Shengji Tang",
+        "Philip Torr",
+        "Wanli Ouyang",
+        "Lei Bai",
+        "Zhenfei Yin"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.080856,
-      "connections": 3
+      "pagerank_score": 0.076487,
+      "connections": 2
     },
     {
       "rank": 8,
-      "arxiv_id": "2605.06609v1",
-      "title": "Transformers Efficiently Perform In-Context Logistic Regression via Normalized Gradient Descent",
+      "arxiv_id": "2605.06641v1",
+      "title": "GlazyBench: A Benchmark for Ceramic Glaze Property Prediction and Image Generation",
       "authors": [
-        "Chenyang Zhang",
-        "Yuan Cao"
+        "Ziyu Zhai",
+        "Siyou Li",
+        "Juexi Shao",
+        "Juntao Yu"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.070218,
+      "pagerank_score": 0.066928,
       "connections": 2
     },
     {
       "rank": 9,
-      "arxiv_id": "2605.06537v1",
-      "title": "MedHorizon: Towards Long-context Medical Video Understanding in the Wild",
+      "arxiv_id": "2605.06656v1",
+      "title": "Why Global LLM Leaderboards Are Misleading: Small Portfolios for Heterogeneous Supervised ML",
       "authors": [
-        "Bodong Du",
-        "Bowen Liu",
-        "Yang Yu",
-        "Xinpeng Ding",
-        "Zhiheng Wu",
-        "Shuning Wang",
-        "Shuo Nie",
-        "Naiming Liu",
-        "Qifeng Chen",
-        "Yangqiu Song",
-        "Xiaomeng Li"
+        "Jai Moondra",
+        "Ayela Chughtai",
+        "Bhargavi Lanka",
+        "Swati Gupta"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.070092,
-      "connections": 2
+      "pagerank_score": 0.047521,
+      "connections": 1
     },
     {
       "rank": 10,
-      "arxiv_id": "2605.06446v1",
-      "title": "FedFrozen: Two-Stage Federated Optimization via Attention Kernel Freezing",
+      "arxiv_id": "2605.06639v1",
+      "title": "Recursive Agent Optimization",
       "authors": [
-        "Junye Du",
-        "Zhenghao Li",
-        "Yushi Feng",
-        "Long Feng"
+        "Apurva Gandhi",
+        "Satyaki Chakraborty",
+        "Xiangjun Wang",
+        "Aviral Kumar",
+        "Graham Neubig"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.069504,
-      "connections": 2
+      "pagerank_score": 0.043092,
+      "connections": 1
     },
     {
       "rank": 11,
-      "arxiv_id": "2605.06592v1",
-      "title": "DINORANKCLIP: DINOv3 Distillation and Injection for Vision-Language Pretraining with High-Order Ranking Consistency",
+      "arxiv_id": "2605.06657v1",
+      "title": "Significant heat transfer enhancement via polymer additives in two-dimensional sheared convection",
       "authors": [
-        "Shuyang Jiang",
-        "Nan Yu",
-        "Yiming Zhang",
-        "Zenghui Ding",
-        "Zhenyu Wu"
+        "Guanhan Li",
+        "Lu Zhu",
+        "Rich. R. Kerswell"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.05864,
-      "connections": 2
+      "pagerank_score": 0.013953,
+      "connections": 0
     },
     {
       "rank": 12,
-      "arxiv_id": "2605.06615v1",
-      "title": "When and Why SignSGD Outperforms SGD: A Theoretical Study Based on $\\ell_1$-norm Lower Bounds",
+      "arxiv_id": "2605.06653v1",
+      "title": "From Baby Universes to Narain Moduli: Topological Boundary Averaging in SymTFTs",
       "authors": [
-        "Hongyi Tao",
-        "Dingzhi Yu",
-        "Lijun Zhang"
+        "Xingyang Yu"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.012931,
+      "pagerank_score": 0.013953,
       "connections": 0
     },
     {
       "rank": 13,
-      "arxiv_id": "2605.06481v1",
-      "title": "OA-WAM: Object-Addressable World Action Model for Robust Robot Manipulation",
+      "arxiv_id": "2605.06652v1",
+      "title": "When No Benchmark Exists: Validating Comparative LLM Safety Scoring Without Ground-Truth Labels",
       "authors": [
-        "Yushan Liu",
-        "Peibo Sun",
-        "Shoujie Li",
-        "Yifan Xie",
-        "Lingfeng Zhang",
-        "Xintao Chao",
-        "Shiyuan Dong",
-        "Fang Chen",
-        "Xiao-Ping Zhang",
-        "Wenbo Ding"
+        "Sushant Gautam",
+        "Finn Schwall",
+        "Annika Willoch Olstad",
+        "Fernando Vallecillos Ruiz",
+        "Birk Torpmann-Hagen",
+        "Sunniva Maria Stordal Bjørklund",
+        "Leon Moonen",
+        "Klas Pettersen",
+        "Michael A. Riegler"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.012931,
+      "pagerank_score": 0.013953,
       "connections": 0
     },
     {
       "rank": 14,
-      "arxiv_id": "2605.06439v1",
-      "title": "From Review to Design: Ethical Multimodal Driver Monitoring Systems for Risk Mitigation, Incident Response, and Accountability in Automated Vehicles",
+      "arxiv_id": "2605.06650v1",
+      "title": "Beyond Negative Rollouts: Positive-Only Policy Optimization with Implicit Negative Gradients",
       "authors": [
-        "Bilal Khana",
-        "Waseem Shariff",
-        "Rory Coyne",
-        "Muhammad Ali Farooq",
-        "Peter Corcoran"
+        "Mingwei Xu",
+        "Hao Fang"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.012931,
+      "pagerank_score": 0.013953,
       "connections": 0
     },
     {
       "rank": 15,
-      "arxiv_id": "2605.06408v1",
-      "title": "Scalable GPU Construction of 3D Voronoi and Power Diagrams",
+      "arxiv_id": "2605.06644v1",
+      "title": "Edge-specific signal propagation on mature chromophore-region 3D mechanism graphs for fluorescent protein quantum-yield prediction",
       "authors": [
-        "Bernardo Taveira",
-        "Carl Lindström",
-        "Maryam Fatemi",
-        "Lars Hammarstrand",
-        "Fredrik Kahl"
+        "Yuchen Xiong",
+        "Swee Keong Yeap",
+        "Steven Aw Yoong Kit"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.012931,
+      "pagerank_score": 0.013953,
       "connections": 0
     }
   ],
   "network_stats": {
     "nodes": 15,
-    "edges": 14,
-    "avg_clustering": 0.2089,
-    "density": 0.1333
+    "edges": 9,
+    "avg_clustering": 0.0,
+    "density": 0.0857
   }
 }

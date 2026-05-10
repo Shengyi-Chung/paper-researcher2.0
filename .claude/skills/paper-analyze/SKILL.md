@@ -19,7 +19,11 @@ Analyze paper similarity, build relationship networks, and rank papers by import
 
 ## Input
 
-Read paper list from `data/search_results.json`.
+Read paper list from `data/search_results.json` (output from `paper-search`).
+
+## Output
+
+Save analysis results to `data/paper_analysis.json` (input for `paper-report`).
 
 ## Workflow
 
@@ -84,3 +88,16 @@ Generate ranked paper list with:
 - scikit-learn: TF-IDF vectorization
 - networkx: Network graph and PageRank
 - numpy: Numerical computation
+
+## Downstream Skills (自动串联)
+
+`paper-analyze` 完成后，会自动触发 `paper-report`：
+
+| 触发条件 | 后续 skill | 读取文件 |
+|---------|-----------|---------|
+| 分析完成 | `paper-report` | `data/search_results.json` + `data/paper_analysis.json` |
+
+**完整工作流：**
+```
+用户查询 → paper-search → paper-analyze → paper-report → 用户报告
+```

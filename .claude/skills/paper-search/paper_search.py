@@ -204,7 +204,7 @@ def save_results(result: Dict, output_dir: str = None) -> str:
     os.makedirs(output_dir, exist_ok=True)
     
     # Save main results
-    results_path = os.path.join(output_dir, "search_results.json")
+    results_path = os.path.join(output_dir, "papers.json")
     with open(results_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     

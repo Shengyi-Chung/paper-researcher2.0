@@ -1,0 +1,162 @@
+{
+  "analysis_time": "2026-05-10T22:56:47.611670",
+  "query": "transformer architecture",
+  "total_papers": 10,
+  "weights": {
+    "similarity": 0.8,
+    "same_author": 0.2
+  },
+  "threshold": 0.3,
+  "pagerank_scores": [
+    {
+      "rank": 1,
+      "arxiv_id": "2605.06665v1",
+      "title": "UniPool: A Globally Shared Expert Pool for Mixture-of-Experts",
+      "authors": [
+        "Minbin Huang",
+        "Han Shi",
+        "Chuanyang Zheng",
+        "Yimeng Wu",
+        "Guoxuan Chen",
+        "Xintong Yu",
+        "Yichun Yin",
+        "Hong Cheng"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.179691,
+      "connections": 2
+    },
+    {
+      "rank": 2,
+      "arxiv_id": "2605.06609v1",
+      "title": "Transformers Efficiently Perform In-Context Logistic Regression via Normalized Gradient Descent",
+      "authors": [
+        "Chenyang Zhang",
+        "Yuan Cao"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.176252,
+      "connections": 3
+    },
+    {
+      "rank": 3,
+      "arxiv_id": "2605.06610v1",
+      "title": "SoftSAE: Dynamic Top-K Selection for Adaptive Sparse Autoencoders",
+      "authors": [
+        "Jakub Stępień",
+        "Marcin Mazur",
+        "Jacek Tabor",
+        "Przemysław Spurek"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.169099,
+      "connections": 3
+    },
+    {
+      "rank": 4,
+      "arxiv_id": "2605.06663v1",
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "authors": [
+        "Ryan Wang",
+        "Akshita Bhagia",
+        "Sewon Min"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.166256,
+      "connections": 2
+    },
+    {
+      "rank": 5,
+      "arxiv_id": "2605.06644v1",
+      "title": "Edge-specific signal propagation on mature chromophore-region 3D mechanism graphs for fluorescent protein quantum-yield prediction",
+      "authors": [
+        "Yuchen Xiong",
+        "Swee Keong Yeap",
+        "Steven Aw Yoong Kit"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.082172,
+      "connections": 1
+    },
+    {
+      "rank": 6,
+      "arxiv_id": "2605.06611v1",
+      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
+      "authors": [
+        "Siquan Li",
+        "Kaiqi Jiang",
+        "Jiacheng Sun",
+        "Tianyang Hu"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.070768,
+      "connections": 1
+    },
+    {
+      "rank": 7,
+      "arxiv_id": "2605.06599v1",
+      "title": "Weight-Decay Turns Transformer Loss Landscapes Villani: Functional-Analytic Foundations for Optimization and Generalization",
+      "authors": [
+        "Abhijit Das",
+        "Sayantan Dutta"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.062369,
+      "connections": 1
+    },
+    {
+      "rank": 8,
+      "arxiv_id": "2605.06628v1",
+      "title": "LiVeAction: a Lightweight, Versatile, and Asymmetric Neural Codec Design for Real-time Operation",
+      "authors": [
+        "Dan Jacobellis",
+        "Neeraja J. Yadwadkar"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.057247,
+      "connections": 1
+    },
+    {
+      "rank": 9,
+      "arxiv_id": "2605.06648v1",
+      "title": "A preliminary exploration of the effects of baseline length for the LIFE space mission",
+      "authors": [
+        "Jonah T. Hansen",
+        "Thomas Birbacher",
+        "Felix A. Dannert",
+        "Philipp Huber",
+        "Andrea Fortier",
+        "Adrian M. Glauser",
+        "Jens Kammerer",
+        "Romain Laugier",
+        "Lia Sartori",
+        "Sascha P. Quanz"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.018072,
+      "connections": 0
+    },
+    {
+      "rank": 10,
+      "arxiv_id": "2605.06645v1",
+      "title": "Electrically controlled Heat Assisted Magnetic Recording in Intercalated 2D Magnets",
+      "authors": [
+        "Josue Rodriguez",
+        "Ruishi Qi",
+        "Catherine Xu",
+        "Feng Wang",
+        "James G. Analytis",
+        "Hossein Taghinejad"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.018072,
+      "connections": 0
+    }
+  ],
+  "network_stats": {
+    "nodes": 10,
+    "edges": 7,
+    "avg_clustering": 0.0,
+    "density": 0.1556
+  }
+}

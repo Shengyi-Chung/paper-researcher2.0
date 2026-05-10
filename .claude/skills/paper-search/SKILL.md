@@ -51,7 +51,7 @@ Extract the following fields from XML response:
 | `pdf_url` | PDF download link |
 
 ### Step 4: Save Data
-Save metadata to `data/search_results.json`
+Save metadata to `data/papers.json`
 
 ## Data Format
 
@@ -97,7 +97,7 @@ python paper_search.py --query "MoE" --max 20
 ```
 
 ## Output Files
-- `data/search_results.json` - Search results
+- `data/papers.json` - Search results (input for downstream skills)
 - `data/search_params.json` - Search parameters
 
 ## Error Handling
@@ -114,3 +114,17 @@ python paper_search.py --query "MoE" --max 20
 - `xml.etree.ElementTree` (built-in)
 - `urllib.parse` (built-in)
 - `datetime` (built-in)
+
+## Downstream Skills (自动串联)
+
+`paper-search` 完成后，会自动触发后续 skill：
+
+| 触发条件 | 后续 skill | 读取文件 | 输出 |
+|---------|-----------|---------|------|
+| 搜索完成 | `paper-analyze` | `data/papers.json` | `data/paper_analysis.json` |
+| 分析完成 | `paper-report` | `data/papers.json` + `data/paper_analysis.json` | `data/paper_reports.md` |
+
+**完整工作流：**
+```
+用户查询 → paper-search → paper-analyze → paper-report → 用户报告
+```
