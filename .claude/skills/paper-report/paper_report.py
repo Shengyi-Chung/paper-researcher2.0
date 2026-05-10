@@ -19,8 +19,11 @@ import time
 from datetime import date, datetime
 from typing import Dict, List, Optional
 
-# Import arXiv export utilities
-from . import arxiv_utils
+# Import arXiv export utilities (support both package and direct run)
+try:
+    from . import arxiv_utils
+except ImportError:
+    import arxiv_utils
 
 
 def get_data_dir() -> str:
@@ -71,6 +74,20 @@ def safe_print(text: str):
         print(text)
 
 
+def get_paper_score(paper: Dict) -> float:
+    """
+    Get relevance score from paper data.
+    Supports both 'relevance_score' (direct) and 'pagerank_score' (normalized to 0-10).
+    """
+    rs = paper.get('relevance_score')
+    if rs is not None:
+        return float(rs)
+    ps = paper.get('pagerank_score', 0)
+    # Normalize pagerank_score to 0-10 scale
+    # Typical range: 0.01-0.15, scale to ~10
+    return min(10.0, ps * 100)
+
+
 def extract_abstracts(papers: List[Dict], ranked_papers: List[Dict]) -> Dict:
     """Extract and align abstracts with ranked list -> paper_abstracts.json"""
     abstracts = {
@@ -100,9 +117,9 @@ def enrich_with_exports(ranked_papers: List[Dict], as_of_date: Optional[date] = 
     """
     as_of = as_of_date or date.today()
     
-    # Separate high and low priority
-    high_priority = [p for p in ranked_papers if p.get('relevance_score', 0) >= 8]
-    medium_priority = [p for p in ranked_papers if 5 <= p.get('relevance_score', 0) < 8]
+    # Separate high and low priority (use pagerank_score normalized to 10 as fallback)
+    high_priority = [p for p in ranked_papers if get_paper_score(p) >= 8]
+    medium_priority = [p for p in ranked_papers if 5 <= get_paper_score(p) < 8]
     
     # Cap total enrichment at 20 papers
     priority_order = high_priority + medium_priority
@@ -128,7 +145,7 @@ def enrich_with_exports(ranked_papers: List[Dict], as_of_date: Optional[date] = 
             "arxiv_id": arxiv_id,
             "canonical_id": arxiv_id,
             "rank": paper.get('rank'),
-            "relevance_score": paper.get('relevance_score', 0),
+            "relevance_score": get_paper_score(paper),
             "introduction_text": "",
             "conclusion_text": "",
             "related_arxiv_ids_recent": [],
@@ -163,14 +180,15 @@ def generate_report(
     
     query = search_data.get('query', 'Unknown')
     total_papers = search_data.get('total_results', 0)
-    ranked_papers = analysis_data.get('ranked_papers', [])
+    # Support both "ranked_papers" and "pagerank_scores" naming conventions
+    ranked_papers = analysis_data.get('ranked_papers') or analysis_data.get('pagerank_scores', [])
     papers = search_data.get('papers', [])
     
     # Build enrichment lookup
     enrichment_by_id = {p['arxiv_id']: p for p in enrichment.get('papers', [])}
     
     # High-relevance papers (score >= 8)
-    high_relevance = [p for p in ranked_papers if p.get('relevance_score', 0) >= 8]
+    high_relevance = [p for p in ranked_papers if get_paper_score(p) >= 8]
     
     # Build markdown
     md = []
@@ -203,7 +221,7 @@ def generate_report(
         arxiv_id = paper.get('arxiv_id', '')
         title = paper.get('title', 'Unknown')
         authors = paper.get('authors', [])
-        score = paper.get('relevance_score', 0)
+        score = get_paper_score(paper)
         contributions = paper.get('key_contributions', 'N/A')
         methods = paper.get('methods', 'N/A')
         
@@ -243,8 +261,8 @@ def generate_report(
     md.append("## Detailed Analysis by Category")
     md.append("")
     
-    medium_papers = [p for p in ranked_papers if 5 <= p.get('relevance_score', 0) < 8]
-    low_papers = [p for p in ranked_papers if p.get('relevance_score', 0) < 5]
+    medium_papers = [p for p in ranked_papers if 5 <= get_paper_score(p) < 8]
+    low_papers = [p for p in ranked_papers if get_paper_score(p) < 5]
     
     if medium_papers:
         md.append("### Medium Relevance Papers")
@@ -260,7 +278,7 @@ def generate_report(
         md.append("")
         md.append("### Lower Relevance Papers")
         for p in low_papers[:5]:
-            md.append(f"- {p.get('title', 'Unknown')} (ID: {p.get('arxiv_id', '')}, Score: {p.get('relevance_score', 0)})")
+            md.append(f"- {p.get('title', 'Unknown')} (ID: {p.get('arxiv_id', '')}, Score: {get_paper_score(p):.1f})")
     
     # Comparison Table
     md.append("")
@@ -398,7 +416,8 @@ def generate_full_report(enable_export_enrichment: bool = True):
         return
 
     papers = search_data.get('papers', [])
-    ranked_papers = analysis_data.get('ranked_papers', [])
+    # Support both "ranked_papers" and "pagerank_scores" naming conventions
+    ranked_papers = analysis_data.get('ranked_papers') or analysis_data.get('pagerank_scores', [])
     
     safe_print(f"[STEP 1] Loaded {len(papers)} papers, {len(ranked_papers)} ranked")
     
@@ -441,15 +460,15 @@ def main():
     parser = argparse.ArgumentParser(description='Generate paper recommendation report (v1.1)')
     parser.add_argument('--top', '-t', type=int, default=10,
                        help='Number of top papers to display')
-    parser.add_argument('--enrich/--no-enrich', dest='enrich', default=True,
-                       help='Enable arXiv export enrichment (default: enabled)')
+    parser.add_argument('--skip-enrich', dest='skip_enrich', action='store_true',
+                       help='Skip arXiv export enrichment (faster, no network calls)')
     parser.add_argument('--full', '-f', action='store_true',
                        help='Generate full report with enrichment (outputs .json/.md files)')
     
     args = parser.parse_args()
     
     if args.full:
-        generate_full_report(enable_export_enrichment=args.enrich)
+        generate_full_report(enable_export_enrichment=not args.skip_enrich)
     else:
         display_report(top_n=args.top)
 
