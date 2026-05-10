@@ -125,8 +125,13 @@ class QueryHolder:
         # Determine query type
         query_type = 'keyword_filter'
         
+        # Ordinal queries (top/first/number 1 paper) - check BEFORE other types
+        ordinal_match = re.search(r'(top|first|number\s*1|#1|rank\s*1|ranked\s*1)\s*(paper|one)', query_lower)
+        if ordinal_match:
+            query_type = 'top_paper'
+        
         # Paper detail queries
-        if any(kw in query_lower for kw in ['tell me more', 'details of', 'what does', 'more about']):
+        elif any(kw in query_lower for kw in ['tell me more', 'details of', 'what does', 'more about']):
             query_type = 'paper_detail'
         # Comparison queries
         elif any(kw in query_lower for kw in ['compare', 'difference', 'which one is better', 'vs', 'versus']):
@@ -208,7 +213,12 @@ class QueryHolder:
         query_type = parsed['query_type']
         matched = []
         
-        if query_type == 'paper_detail':
+        if query_type == 'top_paper':
+            # Return top-ranked paper(s) by pagerank score
+            sorted_papers = sorted(self.papers, key=lambda x: x.get('pagerank_score', 0), reverse=True)
+            matched = sorted_papers[:3]  # Top 3 papers
+        
+        elif query_type == 'paper_detail':
             matched = self._match_by_title(parsed['paper_titles'])
             if not matched and parsed['keywords']:
                 matched = self._match_by_title(parsed['keywords'])
@@ -225,8 +235,13 @@ class QueryHolder:
             ref = self.session.resolve_reference(parsed['raw_query'])
             if ref:
                 matched = self._match_by_title([ref])
+            elif self.session.get_focus_papers():
+                # Get focus paper titles and match them
+                focus_titles = self.session.get_focus_papers()
+                matched = self._match_by_title(focus_titles)
             else:
-                matched = self.session.get_focus_papers()
+                # No session context, return top papers
+                matched = sorted(self.papers, key=lambda x: x.get('pagerank_score', 0), reverse=True)[:1]
         
         else:  # keyword_filter
             matched = self._match_by_keywords(parsed['keywords'])
@@ -291,7 +306,13 @@ class QueryHolder:
         self.session.add_query(query)
         self.session.set_last_query_type(query_type)
         
-        if query_type == 'paper_detail':
+        if query_type == 'top_paper':
+            response_parts.append(self._format_paper_detail(matched[0]))
+            if len(matched) > 1:
+                response_parts.append("**Other top papers:**")
+                response_parts.append(self._format_paper_list(matched[1:]))
+        
+        elif query_type == 'paper_detail':
             response_parts.append(self._format_paper_detail(matched[0]))
             response_parts.append(self._format_paper_list(matched[1:]))
         
@@ -383,9 +404,13 @@ class QueryHolder:
     
     def _format_suggestions(self, query_type: str, matched: List[Dict]) -> str:
         """Generate follow-up suggestions"""
-        suggestions = ["", "**💡 Follow-up suggestions:**"]
+        suggestions = ["", "**Follow-up suggestions:**"]
         
-        if query_type == 'paper_detail':
+        if query_type == 'top_paper':
+            suggestions.append("- \"tell me more about it\"")
+            suggestions.append("- \"what methods does it use?\"")
+            suggestions.append("- \"compare with second ranked paper\"")
+        elif query_type == 'paper_detail':
             suggestions.append("- \"compare it with other papers\"")
             suggestions.append("- \"what methods does it use?\"")
         elif query_type == 'comparison':
