@@ -31,7 +31,7 @@ A four-skill AI agent that transforms a natural-language research query into ran
 | 3 | `paper-report` | `data/{search,analysis}_results.json` | `data/research_report.md`, `data/report_data.json` |
 | 4 | `query-holder` | `data/{search,analysis}_results.json`, `data/query_session.json` | `data/query_session.json` (updates) |
 
-Each skill ships in `skills/<name>/` with its own `SKILL.md` (I/O contract, error-handling) and a Python entry point.
+Each skill ships in `.claude/skills/<name>/` with its own `SKILL.md` (I/O contract, error-handling) and a Python entry point.
 
 ## Workflow
 
@@ -42,8 +42,8 @@ User Query (NL)
 paper-search ──→ search_results.json ──→ paper-analyze ──→ analysis_results.json
                                      │                              │
                                      │                              ▼
-                                     │                    citation_network.png
-                                     │                    (similarity network, not citation)
+                                     │                    similarity_network.png
+                                     │                    
                                      │
                                      └──────────────────────┬─────────────────┐
                                                            │                 │
@@ -92,16 +92,16 @@ The agent chains skills automatically based on intent.
 
 ```bash
 # 1. Search papers
-python skills/paper-search/paper_search.py -q "attention" -m 20
+python .claude/skills/paper-search/paper_search.py -q "attention" -m 20
 
 # 2. Analyze papers (with visualization)
-python skills/paper-analyze/paper_analyze.py -v
+python .claude/skills/paper-analyze/paper_analyze.py -v
 
 # 3. Generate report
-python skills/paper-report/paper_report.py
+python .claude/skills/paper-report/paper_report.py
 
 # 4. Conversational Q&A
-python skills/paper-qa/query_holder.py -q "排行第一的论文的主要方法"
+python .claude/skills/paper-qa/query_holder.py -q "排行第一的论文的主要方法"
 ```
 
 ## Input / Output Specifications
@@ -154,14 +154,15 @@ paper-researcher2.0/
 │   ├── query_session.json      # Conversational state
 │   ├── research_report.md      # Generated report
 │   └── citation_network.png    # Network visualization
-├── skills/
-│   ├── paper-search/           # arXiv paper retrieval
-│   ├── paper-analyze/          # Network analysis + PageRank
-│   ├── paper-report/           # Report generation
-│   └── paper-qa/              # Conversational Q&A
-│       ├── query_holder.py
-│       ├── keyword_expander.py
-│       └── query_session_manager.py
+├── .claude/
+│   └── skills/
+│       ├── paper-search/       # arXiv paper retrieval
+│       ├── paper-analyze/      # Network analysis + PageRank
+│       ├── paper-report/       # Report generation
+│       └── paper-qa/          # Conversational Q&A
+│           ├── query_holder.py
+│           ├── keyword_expander.py
+│           └── query_session_manager.py
 └── AGENT.md                    # This file
 ```
 
@@ -180,32 +181,32 @@ paper-researcher2.0/
 
 ```python
 # Search for transformer papers
-python skills/paper-search/paper_search.py -q "transformer" -m 20
+python .claude/skills/paper-search/paper_search.py -q "transformer" -m 20
 
 # Analyze with visualization
-python skills/paper-analyze/paper_analyze.py -v
+python .claude/skills/paper-analyze/paper_analyze.py -v
 
 # Generate report
-python skills/paper-report/paper_report.py
+python .claude/skills/paper-report/paper_report.py
 ```
 
 ### Conversational workflow
 
 ```bash
 # Ask about top paper
-python skills/paper-qa/query_holder.py -q "tell me more about rank 1"
+python .claude/skills/paper-qa/query_holder.py -q "tell me more about rank 1"
 
 # Compare papers
-python skills/paper-qa/query_holder.py -q "compare Cubit and SoftSAE"
+python .claude/skills/paper-qa/query_holder.py -q "compare Cubit and SoftSAE"
 
 # Author search
-python skills/paper-qa/query_holder.py -q "papers by Chuanyang Zheng"
+python .claude/skills/paper-qa/query_holder.py -q "papers by Chuanyang Zheng"
 
 # Follow-up (context-aware)
-python skills/paper-qa/query_holder.py -q "what methods does it use?"
+python .claude/skills/paper-qa/query_holder.py -q "what methods does it use?"
 
 # View session state
-python skills/paper-qa/query_holder.py --session
+python .claude/skills/paper-qa/query_holder.py --session
 ```
 
 ## Session Features (query-holder)

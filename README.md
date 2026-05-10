@@ -86,7 +86,8 @@ paper-researcher2.0/
 ├── README.md                          # this file
 ├── AGENT.md                           # agent workflow and contracts
 │
-├── skills/
+├── .claude/
+│   └── skills/
 │   ├── paper-search/                  # Skill 1 — arXiv retrieval
 │   │   ├── SKILL.md
 │   │   └── paper_search.py
@@ -163,18 +164,18 @@ When you want to re-run a single stage, each skill has its own kebab-case slash 
 
 ```bash
 # 1. Search arXiv
-python skills/paper-search/paper_search.py -q "attention" -m 20 -s submittedDate
+python .claude/skills/paper-search/paper_search.py -q "attention" -m 20 -s submittedDate
 
 # 2. Build similarity network + compute PageRank
-python skills/paper-analyze/paper_analyze.py -v
+python .claude/skills/paper-analyze/paper_analyze.py -v
 
 # 3. Generate research briefing
-python skills/paper-report/paper_report.py
+python .claude/skills/paper-report/paper_report.py
 
 # 4. Ask follow-up questions
-python skills/paper-qa/query_holder.py -q "tell me more about rank 1"
-python skills/paper-qa/query_holder.py -q "compare Cubit and SoftSAE"
-python skills/paper-qa/query_holder.py -q "排行第一的论文的主要方法"
+python .claude/skills/paper-qa/query_holder.py -q "tell me more about rank 1"
+python .claude/skills/paper-qa/query_holder.py -q "compare Cubit and SoftSAE"
+python .claude/skills/paper-qa/query_holder.py -q "排行第一的论文的主要方法"
 ```
 
 Each script supports `--verbose` for detailed output.
@@ -211,7 +212,7 @@ Builds a paper similarity network based on:
 
 Outputs:
 - `analysis_results.json`: papers ranked by PageRank score
-- `citation_network.png`: similarity network visualization
+- `similarity_network.png`: similarity network visualization
 
 ### 3. `paper-report` — research briefing
 
