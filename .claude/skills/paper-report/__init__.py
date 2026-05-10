@@ -1,3 +1,7 @@
-from .paper_report import generate_report, print_report, save_report, main
+"""
+paper-report: Paper recommendation report generation skill
+"""
 
-__all__ = ['generate_report', 'print_report', 'save_report', 'main']
+from .paper_report import display_report, main, load_search_results, load_analysis_results, get_data_dir
+
+__all__ = ['display_report', 'main', 'load_search_results', 'load_analysis_results', 'get_data_dir']

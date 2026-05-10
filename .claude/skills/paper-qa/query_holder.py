@@ -23,7 +23,7 @@ from query_session_manager import QuerySessionManager
 
 
 # Data directory
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
+DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "data")
 ANALYSIS_PATH = os.path.join(DATA_DIR, "analysis_results.json")
 SEARCH_PATH = os.path.join(DATA_DIR, "search_results.json")
 SESSION_PATH = os.path.join(DATA_DIR, "query_session.json")

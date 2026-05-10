@@ -23,8 +23,9 @@ plt.rcParams['axes.unicode_minus'] = False
 
 def get_shared_data_dir() -> str:
     """Get the path to the shared data directory"""
+    # Navigate: paper-analyze/ -> skills/ -> .claude/ -> project_root/ -> data/
     return os.path.join(
-        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))),
         "data"
     )
 

@@ -13,8 +13,9 @@ from typing import Dict, List, Optional
 
 def get_data_dir() -> str:
     """Get path to data directory"""
+    # Navigate: paper-report/ -> skills/ -> .claude/ -> project_root/ -> data/
     return os.path.join(
-        os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))),
         "data"
     )
 

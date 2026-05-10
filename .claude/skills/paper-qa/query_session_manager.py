@@ -4,7 +4,13 @@ from typing import List, Dict, Optional
 
 
 class QuerySessionManager:
-    def __init__(self, session_path="/data/query_session.json"):
+    def __init__(self, session_path=None):
+        if session_path is None:
+            # Navigate: query_session_manager.py -> paper-qa/ -> skills/ -> .claude/ -> project_root/ -> data/
+            import os
+            _f = __file__
+            _base = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(_f))))
+            session_path = os.path.join(_base, "data", "query_session.json")
         self.session_path = session_path
         self.state = self._load_state()
 
