@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-paper-report v1.1.0: Generate research reports from analyzed papers.
+paper-report v1.2.0: Generate research reports from analyzed papers.
 Merges upstream analysis and abstracts with arXiv HTML export enrichment
-(introduction, conclusion, and recent related arXiv ids).
+(introduction, methodology, conclusion, and recent related arXiv ids).
 
 Workflow:
 1. Read paper_analysis.json + papers.json
 2. Extract abstracts -> paper_abstracts.json
-3. Enrich via arXiv export -> paper_export_enrichment.json
-4. Generate report -> paper_reports.md
+3. Enrich via arXiv export (introduction/methodology/conclusion) -> paper_export_enrichment.json
+4. Generate report (centered on methods & contributions) -> paper_reports.md
 """
 
 import io
@@ -128,7 +128,7 @@ def enrich_with_exports(ranked_papers: List[Dict], as_of_date: Optional[date] = 
     enrichment = {
         "generated_at": datetime.now().isoformat(),
         "as_of_date": as_of.isoformat(),
-        "enrichment_version": "1.1",
+        "enrichment_version": "1.2",
         "papers": []
     }
     
@@ -147,6 +147,7 @@ def enrich_with_exports(ranked_papers: List[Dict], as_of_date: Optional[date] = 
             "rank": paper.get('rank'),
             "relevance_score": get_paper_score(paper),
             "introduction_text": "",
+            "methodology_text": "",
             "conclusion_text": "",
             "related_arxiv_ids_recent": [],
             "has_references_section": False,
@@ -156,6 +157,7 @@ def enrich_with_exports(ranked_papers: List[Dict], as_of_date: Optional[date] = 
         try:
             bundle = arxiv_utils.fetch_paper_export_bundle(arxiv_id, as_of=as_of)
             entry["introduction_text"] = bundle.get("introduction_text", "")
+            entry["methodology_text"] = bundle.get("methodology_text", "")
             entry["conclusion_text"] = bundle.get("conclusion_text", "")
             entry["related_arxiv_ids_recent"] = bundle.get("related_arxiv_ids_recent", [])
             entry["has_references_section"] = bundle.get("has_references_section", False)
@@ -197,7 +199,7 @@ def generate_report(
     md.append(f"**Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     md.append(f"**Total Papers**: {total_papers}")
     md.append(f"**High-Relevance Papers**: {len(high_relevance)}")
-    md.append(f"**Enrichment**: Introduction/conclusion + recent related arXiv ids from export HTML")
+    md.append(f"**Enrichment**: Introduction / methodology / conclusion + recent related arXiv ids from export HTML")
     md.append("")
     md.append("---")
     md.append("")
@@ -208,7 +210,8 @@ def generate_report(
     md.append("This report analyzes papers retrieved for the query **\"{}\"**. ".format(query))
     md.append(f"Among {total_papers} papers, {len(high_relevance)} achieved high relevance scores (≥8). ")
     md.append("The following sections provide detailed analysis based on upstream rankings, ")
-    md.append("paper abstracts, and arXiv export enrichment (introductions, conclusions, and recent citations).")
+    md.append("paper abstracts, and arXiv export enrichment (introduction, **methodology**, conclusion, and recent citations).")
+    md.append("This report **centers on methods and contributions** per paper and for the field.")
     md.append("")
     md.append("---")
     md.append("")
@@ -232,23 +235,37 @@ def generate_report(
         # Get enrichment
         enrich = enrichment_by_id.get(arxiv_id, {})
         intro = enrich.get('introduction_text', '')[:300]
+        methodology = enrich.get('methodology_text', '')[:500]  # Longer excerpt for methodology
         conclusion = enrich.get('conclusion_text', '')[:300]
         recent_ids = enrich.get('related_arxiv_ids_recent', [])
         
         md.append(f"> **[{title}](https://arxiv.org/abs/{arxiv_id})**")
         md.append(f"> Relevance: {score}/10 | Authors: {', '.join(authors[:3])}{'...' if len(authors) > 3 else ''}")
         md.append(">")
-        md.append(f"> **Abstract**: {abstract}...")
+        
+        # Methods & Methodology (center of the report)
+        combined_methods = methods if methods != 'N/A' else methodology
+        if combined_methods and combined_methods != 'N/A':
+            md.append(f"> **Methods & Methodology**: {combined_methods[:300]}...")
         md.append(">")
         
+        # Contributions
+        md.append(f"> **Contributions (Key Claims)**: {contributions}")
+        md.append(">")
+        
+        # Abstract (supporting context)
+        if abstract:
+            md.append(f"> **Abstract** (supporting): {abstract}...")
+            md.append(">")
+        
+        # Introduction (excerpt, supporting)
         if intro:
             md.append(f"> **Introduction (excerpt)**: {intro}...")
+        # Conclusion (excerpt, supporting)
         if conclusion:
             md.append(f"> **Conclusion (excerpt)**: {conclusion}...")
-        md.append(">")
-        md.append(f"> **Key Contributions**: {contributions}")
-        md.append(f"> **Methods**: {methods}")
         
+        # Recent related arXiv ids
         if recent_ids:
             ids_str = ", ".join([f"[{rid}](https://arxiv.org/abs/{rid})" for rid in recent_ids[:5]])
             md.append(f"> **Recent related arXiv ids** (last 2 years): {ids_str}")
@@ -402,7 +419,7 @@ def generate_full_report(enable_export_enrichment: bool = True):
     Generate full research report (v1.1 mode) with arXiv export enrichment.
     Outputs: paper_abstracts.json, paper_export_enrichment.json, paper_reports.md
     """
-    safe_print("\n[REPORT v1.1] Starting full report generation...")
+    safe_print("\n[REPORT v1.2] Starting full report generation...")
     
     # Step 1: Load data
     search_data = load_search_results()
@@ -457,7 +474,7 @@ def generate_full_report(enable_export_enrichment: bool = True):
 def main():
     import argparse
     
-    parser = argparse.ArgumentParser(description='Generate paper recommendation report (v1.1)')
+    parser = argparse.ArgumentParser(description='Generate paper recommendation report (v1.2)')
     parser.add_argument('--top', '-t', type=int, default=10,
                        help='Number of top papers to display')
     parser.add_argument('--skip-enrich', dest='skip_enrich', action='store_true',
