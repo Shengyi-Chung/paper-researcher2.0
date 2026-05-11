@@ -1,126 +1,114 @@
 {
-  "query": "transformer architecture",
-  "search_time": "2026-05-10T22:50:29.653878",
-  "total_results": 10,
-  "max_results_requested": 10,
+  "query": "NLP",
+  "search_time": "2026-05-11T18:33:32.972799",
+  "total_results": 20,
+  "max_results_requested": 20,
   "sort_by": "submittedDate",
   "papers": [
     {
-      "arxiv_id": "2605.06665v1",
-      "title": "UniPool: A Globally Shared Expert Pool for Mixture-of-Experts",
-      "abstract": "Modern Mixture-of-Experts (MoE) architectures allocate expert capacity through a rigid per-layer rule: each transformer layer owns a separate expert set. This convention couples depth scaling with linear expert-parameter growth and assumes that every layer needs isolated expert capacity. However, recent analyses and our routing probe challenge this allocation rule: replacing a deeper layer's learned top-k router with uniform random routing drops downstream accuracy by only 1.0-1.6 points across multiple production MoE models. Motivated by this redundancy, we propose UniPool, an MoE architecture that treats expert capacity as a global architectural budget by replacing per-layer expert ownership with a single shared pool accessed by independent per-layer routers. To enable stable and balanced training under sharing, we introduce a pool-level auxiliary loss that balances expert utilization across the entire pool, and adopt NormRouter to provide sparse and scale-stable routing into the shared expert pool. Across five LLaMA-architecture model scales (182M, 469M, 650M, 830M, and 978M parameters) trained on 30B tokens from the Pile, UniPool consistently improves validation loss and perplexity over the matched vanilla MoE baselines. Across these scales, UniPool reduces validation loss by up to 0.0386 relative to vanilla MoE. Beyond raw loss improvement, our results identify pool size as an explicit depth-scaling hyperparameter: reduced-pool UniPool variants using only 41.6%-66.7% of the vanilla expert-parameter budget match or outperform layer-wise MoE at the tested scales. This shows that, under a shared-pool design, expert parameters need not grow linearly with depth; they can grow sublinearly while remaining more efficient and effective than vanilla MoE. Further analysis shows that UniPool's benefits compose with finer-grained expert decomposition.",
+      "arxiv_id": "2605.07701v1",
+      "title": "Guidance Is Not a Hyperparameter: Learning Dynamic Control in Diffusion Language Models",
+      "abstract": "Classifier-Free Guidance (CFG) is a widely used mechanism for controlling diffusion-based generative models, yet its guidance scale is typically treated as a fixed hyperparameter throughout generation. This static design yields a suboptimal controllability and quality tradeoff, as the optimal degree of guidance varies across tasks and across different stages of the diffusion process, especially in NLP domain. We recast CFG scale selection as a sequential decision-making problem and propose to learn dynamic guidance trajectories via reinforcement learning. Specifically, we model the guidance scale as a discrete control action selected at each generation step based on the evolving diffusion state, and optimize a policy using Proximal Policy Optimization (PPO) under task-level rewards. Experiments on three controlled NLP generation tasks using discrete diffusion language models demonstrate that adaptive guidance consistently achieves a better balance between controllability and generation quality than fixed-scale strategies. Further analysis of the learned policies reveals distinct and interpretable guidance trajectories across tasks, underscoring the importance of treating guidance as a dynamic control process rather than a static design choice.",
       "authors": [
-        "Minbin Huang",
-        "Han Shi",
-        "Chuanyang Zheng",
-        "Yimeng Wu",
-        "Guoxuan Chen",
-        "Xintong Yu",
-        "Yichun Yin",
-        "Hong Cheng"
+        "Fan Zhou",
+        "Tim Van de Cruys"
       ],
-      "author_count": 8,
-      "published": "2026-05-07",
-      "updated": "2026-05-07",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "primary_category": "cs.LG",
-      "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06665v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06665v1",
-      "comments": null,
-      "journal_ref": null
-    },
-    {
-      "arxiv_id": "2605.06663v1",
-      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
-      "abstract": "Large language models are typically deployed as monolithic systems, requiring the full model even when applications need only a narrow subset of capabilities, e.g., code, math, or domain-specific knowledge. Mixture-of-Experts (MoEs) seemingly offer a potential alternative by activating only a subset of experts per input, but in practice, restricting inference to a subset of experts for a given domain leads to severe performance degradation. This limits their practicality in memory-constrained settings, especially as models grow larger and sparser. We introduce EMO, an MoE designed for modularity-the independent use and composition of expert subsets-without requiring human-defined priors. Our key idea is to encourage tokens from similar domains to rely on similar experts. Since tokens within a document often share a domain, EMO restricts them to select experts from a shared pool, while allowing different documents to use different pools. This simple constraint enables coherent expert groupings to emerge during pretraining using document boundaries alone. We pretrain a 1B-active, 14B-total EMO on 1T tokens. As a full model, it matches standard MoE performance. Crucially, it enables selective expert use: retaining only 25% (12.5%) of experts incurs just a 1% (3%) absolute drop, whereas standard MoEs break under the same setting. We further find that expert subsets in EMO specialize at semantic levels (e.g., domains such as math or code), in contrast to the low-level syntactic specialization observed in standard MoEs. Altogether, our results demonstrate a path toward modular, memory-efficient deployment of large, sparse models and open new opportunities for composable architectures.",
-      "authors": [
-        "Ryan Wang",
-        "Akshita Bhagia",
-        "Sewon Min"
-      ],
-      "author_count": 3,
-      "published": "2026-05-07",
-      "updated": "2026-05-07",
+      "author_count": 2,
+      "published": "2026-05-08",
+      "updated": "2026-05-08",
       "categories": [
         "cs.CL"
       ],
       "primary_category": "cs.CL",
       "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06663v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06663v1",
-      "comments": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.07701v1",
+      "abstract_url": "https://arxiv.org/abs/2605.07701v1",
+      "comments": "ReALM-GEN@ICLR2026",
       "journal_ref": null
     },
     {
-      "arxiv_id": "2605.06648v1",
-      "title": "A preliminary exploration of the effects of baseline length for the LIFE space mission",
-      "abstract": "By aiming to find and characterise dozens of habitable exoplanets through the technique of nulling interferometry, the LIFE space mission will produce transformational science. One of the key parameters for such an interferometric mission is the nulling baseline length - the distance between nulled apertures, which past studies have assumed to be 10-100m. Advances in planet occurrence statistics and simulation tools allow us now to revisit this key assumption with significantly more detail, particularly with the intention to reduce the range of baselines considered due to mission implementation concerns. We utilise the LIFEsim mission simulator along with revised mathematical tools to identify whether the range of baselines could be reduced without significantly affecting planet yield and fringe tracking performance. Along the way, we also determine a new astrophysically motivated technique for choosing which baselines are optimal for a given science target. We find that indeed, LIFE could utilise a considerably shorter range of baselines, such as 25-80m, or even discrete baselines without much (<10%) loss of performance. Nevertheless, careful trade-offs between performance and implementation simplification must be made, especially considering any spectral weighting that may be required by the scientific goals, and the potential loss of target-specific baseline optimisation.",
+      "arxiv_id": "2605.07606v1",
+      "title": "Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification",
+      "abstract": "Detecting levels of psychological defence mechanisms in supportive conversations is inherently ambiguous. In the PsyDefDetect shared task at BioNLP 2026 the eight positive defence categories share surface language and differ only in pragmatic function and trained raters reach only moderate inter-annotator agreement. On such a task the decisive lever is not a stronger single model but error independence, since any single representation will waver on the overlapping defence boundaries. We translate this insight into a 9-voter ensemble spanning three orthogonal axes: class granularity (all nine classes for the gatekeeper, only the eight defence classes for the specialists), training method (generative and discriminative) and base model. The system reaches $F1_{test}{=}.420$ on the hidden test set, placing first among 21 registered teams.",
       "authors": [
-        "Jonah T. Hansen",
-        "Thomas Birbacher",
-        "Felix A. Dannert",
-        "Philipp Huber",
-        "Andrea Fortier",
-        "Adrian M. Glauser",
-        "Jens Kammerer",
-        "Romain Laugier",
-        "Lia Sartori",
-        "Sascha P. Quanz"
-      ],
-      "author_count": 10,
-      "published": "2026-05-07",
-      "updated": "2026-05-07",
-      "categories": [
-        "astro-ph.IM",
-        "astro-ph.EP"
-      ],
-      "primary_category": "astro-ph.IM",
-      "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06648v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06648v1",
-      "comments": "32 pages, 20 figures, 1 table; Accepted for publication in the Publications of the Astronomical Society of the Pacific (PASP)",
-      "journal_ref": null
-    },
-    {
-      "arxiv_id": "2605.06645v1",
-      "title": "Electrically controlled Heat Assisted Magnetic Recording in Intercalated 2D Magnets",
-      "abstract": "The ever-increasing demand for fast, reliable, and energy-efficient information storage continues to push magnetic memory technologies toward their fundamental limits. Conventional scaling strategies, which rely on reducing bit size, inevitably run into the \"magnetic recording trilemma,\" where signal-to-noise ratio, thermal stability, and writability cannot all be optimized simultaneously. Heat-assisted magnetic recording (HAMR) has emerged as the leading solution, enabling high-density storage by transiently heating the medium during the write cycle. However, the reliance on laser optics and plasmonic transducers restricts HAMR primarily to hard-disk drives, limiting its integration with on-chip or embedded architectures. Here, we demonstrate an electronic variant of HAMR in which Joule heating from low-current density current pulses facilitates data writing, while the anomalous Hall effect provides electronic readout. Employing intercalated 2D magnet Ni$_{1/4}$TaSe$_2$, we show direct evidence that current pulses heat the material above its Curie temperature, during which a small magnetic field of ~2mT (100 times smaller than the coercive field) enables efficient data writing. The all-electronic approach combined with the 2D magnetic medium creates timely opportunities to revisit the energy-assisted magnetization recording, enabling new recording schemes that combine fundamental novelty with technological impact.",
-      "authors": [
-        "Josue Rodriguez",
-        "Ruishi Qi",
-        "Catherine Xu",
-        "Feng Wang",
-        "James G. Analytis",
-        "Hossein Taghinejad"
-      ],
-      "author_count": 6,
-      "published": "2026-05-07",
-      "updated": "2026-05-07",
-      "categories": [
-        "cond-mat.mes-hall",
-        "cond-mat.mtrl-sci"
-      ],
-      "primary_category": "cond-mat.mes-hall",
-      "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06645v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06645v1",
-      "comments": "6 pages, 4 figures in main, supplement with 3 figures",
-      "journal_ref": null
-    },
-    {
-      "arxiv_id": "2605.06644v1",
-      "title": "Edge-specific signal propagation on mature chromophore-region 3D mechanism graphs for fluorescent protein quantum-yield prediction",
-      "abstract": "Fluorescent protein quantum yield (QY) is governed by the mature chromophore and its three-dimensional microenvironment rather than sequence identity alone. Protein language models and emission-band averages capture global trends, but do not model how local physical signals act on specific chromophore regions. We present a chromophore-centred mechanism graph algorithm for QY prediction. Each PDB structure is converted into a typed 3D residue graph, registered to a mature-CRO state, partitioned into phenolate, bridge and imidazolinone regions, and transformed by channel-signal-region propagation. The representation contains 121 enrichment features; after removing identity shortcuts, 52 non-identity features are used for band-specific ExtraTrees regression. Because each feature encodes a contact channel, seed signal and target CRO region, interpretation is intrinsic rather than post hoc. On a 531-protein benchmark, the method achieved the best random-CV performance among model-based baselines (R = 0.772 +/- 0.008, MAE = 0.131 +/- 0.002), exceeding Band mean (R = 0.632), ESM-C (R = 0.734) and SaProt (R = 0.731), and ranked first in bright screening (Bright P@5 = 0.704). Under homology control, the advantage was clearest in the remote bucket (<50% similarity; R = 0.697 versus 0.633, 0.575 and 0.408), with the strongest overall bright/dark Top-K screening. Stable selected features recovered band-specific mechanisms: aromatic packing and clamp asymmetry in GFP-like proteins, charge/clamp balance in Red proteins, and flexibility-risk/bulky-contact features in Far-red proteins. Source code, feature tables and evaluation scripts are available from the first author upon request. Contact: yuchenak05@gmail.com",
-      "authors": [
-        "Yuchen Xiong",
-        "Swee Keong Yeap",
-        "Steven Aw Yoong Kit"
+        "Philipp Steigerwald",
+        "Eric Rudolph",
+        "Jens Albrecht"
       ],
       "author_count": 3,
+      "published": "2026-05-08",
+      "updated": "2026-05-08",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.07606v1",
+      "abstract_url": "https://arxiv.org/abs/2605.07606v1",
+      "comments": "Accepted at the BioNLP 2026 PsyDefDetect Shared Task @ ACL 2026 (1st place, 21 registered teams)",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.07453v1",
+      "title": "Data Contamination in Neural Hieroglyphic Translation: A Reproducibility Study",
+      "abstract": "Ancient and endangered languages pose a unique challenge for NLP: their datasets are inherently scarce, difficult to expand, and built from formulaic corpora -- making data-quality issues especially consequential yet rarely audited. Motivated by the need to understand what current NMT can realistically achieve for such languages, we investigate hieroglyphic-to-German translation, where a recent study reported 61.5 BLEU using fine-tuned M2M-100. Our reproduction yields only 37.0 BLEU with the released model. Investigating this gap, we find 2\\% of test targets appear identically in training (16/50; 50\\% under 8-gram overlap at 70\\% threshold). This contamination inflates scores dramatically: contaminated samples achieve up to 83.8 BLEU / 0.924 COMET-22 versus 30.9--39.2 BLEU / 0.622--0.676 COMET-22 on clean samples across five model configurations spanning two architectures. Document-level decontamination reduces contaminated BLEU by only 4.6 points because 8/16 targets persist via other source documents -- target-level deduplication is required. We release a decontaminated 34-sample test set and establish corrected baselines (30.9--39.2 BLEU), providing a realistic assessment of NMT capability for this endangered writing system.",
+      "authors": [
+        "Ammar Toutou",
+        "Abdelrahman Harb",
+        "Christine Basta"
+      ],
+      "author_count": 3,
+      "published": "2026-05-08",
+      "updated": "2026-05-08",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.07453v1",
+      "abstract_url": "https://arxiv.org/abs/2605.07453v1",
+      "comments": "Accepted to NLP4DH 2026 Conference",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.07446v1",
+      "title": "SSP-based construction of evaluation-annotated data for fine-grained aspect-based sentiment analysis",
+      "abstract": "We report the construction of a Korean evaluation-annotated corpus, hereafter called 'Evaluation Annotated Dataset (EVAD)', and its use in Aspect-Based Sentiment Analysis (ABSA) extended in order to cover e-commerce reviews containing sentiment and non-sentiment linguistic patterns. The annotation process uses Semi-Automatic Symbolic Propagation (SSP). We built extensive linguistic resources formalized as a Finite-State Transducer (FST) to annotate corpora with detailed ABSA components in the fashion e-commerce domain. The ABSA approach is extended, in order to analyze user opinions more accurately and extract more detailed features of targets, by including aspect values in addition to topics and aspects, and by classifying aspectvalue pairs depending whether values are unary, binary, or multiple. For evaluation, the KoBERT and KcBERT models are trained on the annotated dataset, showing robust performances of F1 0.88 and F1 0.90, respectively, on recognition of aspect-value pairs.",
+      "authors": [
+        "Suwon Choi",
+        "Shinwoo Kim",
+        "Changhoe Hwang",
+        "Gwanghoon Yoo",
+        "Eric Laporte",
+        "Jeesun Nam"
+      ],
+      "author_count": 6,
+      "published": "2026-05-08",
+      "updated": "2026-05-08",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.07446v1",
+      "abstract_url": "https://arxiv.org/abs/2605.07446v1",
+      "comments": null,
+      "journal_ref": "29th International Conference on Computational Linguistics (COLING). Workshop on Pattern-based Approaches to NLP in the Age of Deep Learning (Pan-DL), Oct 2022, Gyeongju, South Korea, pp.38-44"
+    },
+    {
+      "arxiv_id": "2605.06982v1",
+      "title": "FastOmniTMAE: Parallel Clause Learning for Scalable and Hardware-Efficient Tsetlin Embeddings",
+      "abstract": "Embedding models in natural language processing (NLP) increasingly rely on deep architectures such as BERT, while simpler models such as Word2Vec provide efficient representations but limited interpretability. The Tsetlin Machine (TM) offers an alternative logic-based learning paradigm. Omni TM Autoencoder (Omni TM-AE) applies this paradigm to static embedding by exploiting automaton state distributions within a single clause layer, but its training process remains slow. In this work, we propose FastOmniTMAE, a reformulation of Omni TM-AE that replaces sequential training dependencies with a two-stage parallel process: evaluation and update. Using a Single-Run Multi-Environment Benchmark covering classification, similarity, and clustering, FastOmniTMAE achieves up to 5$\\times$ faster training in classification while maintaining comparable embedding quality under both Spearman and Kendall similarity measures. To address the limited efficiency of TM training on conventional GPUs, we further implement FastOmniTMAE as a reusable accelerator on SoC-FPGA platforms. The Multi-Hardware Benchmark shows that FastOmniTMAE achieves similarity scores of 0.669 on a resource-constrained FPGA and 0.696 on an UltraScale+ SoC, demonstrating efficient logic-based embedding training with a small hardware footprint.",
+      "authors": [
+        "Ahmed K. Kadhim",
+        "Lei Jiao",
+        "Rishad Shafik",
+        "Ole-Christoffer Granmo",
+        "Mayur Kishor Shende"
+      ],
+      "author_count": 5,
       "published": "2026-05-07",
       "updated": "2026-05-07",
       "categories": [
@@ -128,127 +116,418 @@
       ],
       "primary_category": "cs.LG",
       "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06644v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06644v1",
-      "comments": "Includes appendix; source code, processed feature tables and evaluation scripts are available from the first author upon reasonable request",
-      "journal_ref": null
-    },
-    {
-      "arxiv_id": "2605.06628v1",
-      "title": "LiVeAction: a Lightweight, Versatile, and Asymmetric Neural Codec Design for Real-time Operation",
-      "abstract": "Modern sensors generate rich, high-fidelity data, yet applications operating on wearable or remote sensing devices remain constrained by bandwidth and power budgets. Standardized codecs such as JPEG and MPEG achieve efficient trade-offs between bitrate and perceptual quality but are designed for human perception, limiting their applicability to machine-perception tasks and non-traditional modalities such as spatial audio arrays, hyperspectral images, and 3D medical images. General-purpose compression schemes based on scalar quantization or resolution reduction are broadly applicable but fail to exploit inherent signal redundancies, resulting in suboptimal rate-distortion performance. Recent generative neural codecs, or tokenizers, model complex signal dependencies but are often over-parameterized, data-hungry, and modality-specific, making them impractical for resource-constrained environments. We introduce a Lightweight, Versatile, and Asymmetric neural codec architecture (LiVeAction), that addresses these limitations through two key ideas. (1) To reduce the complexity of the encoder to meet the resource constraints of the execution environments, we impose an FFT-like structure and reduce the overall size and depth of the neural-network-based analysis transform. (2) To allow arbitrary signal modalities and simplify training, we replace adversarial and perceptual losses with a variance-based rate penalty. Our design produces codecs that deliver superior rate-distortion performance compared to state-of-the-art generative tokenizers, while remaining practical for deployment on low-power sensors. We release our code, experiments, and python library at https://github.com/UT-SysML/liveaction .",
-      "authors": [
-        "Dan Jacobellis",
-        "Neeraja J. Yadwadkar"
-      ],
-      "author_count": 2,
-      "published": "2026-05-07",
-      "updated": "2026-05-07",
-      "categories": [
-        "eess.IV",
-        "cs.LG",
-        "cs.MM",
-        "eess.AS",
-        "eess.SP"
-      ],
-      "primary_category": "eess.IV",
-      "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06628v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06628v1",
-      "comments": "DCC 2026",
-      "journal_ref": null
-    },
-    {
-      "arxiv_id": "2605.06611v1",
-      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
-      "abstract": "Despite the prevalence of the attention sink phenomenon in Large Language Models (LLMs), where initial tokens disproportionately monopolize attention scores, its structural origins remain elusive. This work provides a \\textit{mechanistic explanation} for this phenomenon. First, we trace its root to the value aggregation process inherent in self-attention, which induces a systematic variance discrepancy. We further demonstrate that this discrepancy is drastically amplified by the activation of super neurons within Feed-Forward Network (FFN) layers. Specifically, the channel-sparse down-projections trigger a dimension disparity of the first-token representation, necessitating the formation of attention sinks as a structural anchor. Then, we validate this causal chain through two controlled interventions: (i) isolating the aggregation effect via attention mask modifications and (ii) amplifying the variance of targeted token representations. Both interventions can replicate attention sinks at arbitrary positions. Our mechanistic understanding offers a foundation for the systematic control of sink formation. Finally, as a proof of concept, we propose \\textit{head-wise RMSNorm}, an architectural modification that stabilizes value aggregation outputs during pre-training. Our experiments demonstrate that restoring statistical parity across positions significantly accelerates convergence.",
-      "authors": [
-        "Siquan Li",
-        "Kaiqi Jiang",
-        "Jiacheng Sun",
-        "Tianyang Hu"
-      ],
-      "author_count": 4,
-      "published": "2026-05-07",
-      "updated": "2026-05-07",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "stat.ML"
-      ],
-      "primary_category": "cs.LG",
-      "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06611v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06611v1",
-      "comments": "Accepted to ICML 2026",
-      "journal_ref": null
-    },
-    {
-      "arxiv_id": "2605.06610v1",
-      "title": "SoftSAE: Dynamic Top-K Selection for Adaptive Sparse Autoencoders",
-      "abstract": "Sparse Autoencoders (SAEs) have become an important tool in mechanistic interpretability, helping to analyze internal representations in both Large Language Models (LLMs) and Vision Transformers (ViTs). By decomposing polysemantic activations into sparse sets of monosemantic features, SAEs aim to translate neural network computations into human-understandable concepts. However, common architectures such as TopK SAEs rely on a fixed sparsity level. They enforce the same number of active features (K) across all inputs, ignoring the varying complexity of real-world data. Natural data often lies on manifolds with varying local intrinsic dimensionality, meaning the number of relevant factors can change significantly across samples. This suggests that a fixed sparsity level is not optimal. Simple inputs may require only a few features, while more complex ones need more expressive representations. Using a constant K can therefore introduce noise in simple cases or miss important structure in more complex ones. To address this issue, we propose SoftSAE, a sparse autoencoder with a Dynamic Top-K selection mechanism. Our method uses a differentiable Soft Top-K operator to learn an input-dependent sparsity level k. This allows the model to adjust the number of active features based on the complexity of each input. As a result, the representation better matches the structure of the data, and the explanation length reflects the amount of information in the input. Experimental results confirm that SoftSAE not only finds meaningful features, but also selects the right number of features for each concept. The source code is available at: https://anonymous.4open.science/r/SoftSAE-8F71/.",
-      "authors": [
-        "Jakub Stępień",
-        "Marcin Mazur",
-        "Jacek Tabor",
-        "Przemysław Spurek"
-      ],
-      "author_count": 4,
-      "published": "2026-05-07",
-      "updated": "2026-05-07",
-      "categories": [
-        "cs.LG",
-        "cs.CV"
-      ],
-      "primary_category": "cs.LG",
-      "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06610v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06610v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.06982v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06982v1",
       "comments": null,
       "journal_ref": null
     },
     {
-      "arxiv_id": "2605.06609v1",
-      "title": "Transformers Efficiently Perform In-Context Logistic Regression via Normalized Gradient Descent",
-      "abstract": "Transformers have demonstrated remarkable in-context learning (ICL) capabilities. The strong ICL performance of transformers is commonly believed to arise from their ability to implicitly execute certain algorithms on the context, thereby enhancing prediction and generation. In this work, we investigate how transformers with softmax attention perform in-context learning on linear classification data. We first construct a class of multi-layer transformers that can perform in-context logistic regression, with each layer exactly performing one step of normalized gradient descent on an in-context loss. Then, we show that our constructed transformer can be obtained through (i) training a single self-attention layer supervised by one-step gradient descent, and (ii) recurrently applying the trained layer to obtain a looped model. Training convergence guarantees of the self-attention layer and out-of-distribution generalization guarantees of the looped model are provided. Our results advance the theoretical understanding of ICL mechanism by showcasing how softmax transformers can effectively act as in-context learners.",
+      "arxiv_id": "2605.06940v1",
+      "title": "MultiSoc-4D: A Benchmark for Diagnosing Instruction-Induced Label Collapse in Closed-Set LLM Annotation of Bengali Social Media",
+      "abstract": "Annotation automation via Large Language Models (LLMs) is the core approach for scaling NLP datasets; however, LLM behavior with respect to closed-set instructions in low-resource languages has not been well studied. We present MultiSoc-4D, a Bengali social media dataset benchmark, which contains 58K+ social media comments from six sources annotated along four dimensions: category, sentiment, hate speech, and sarcasm. By employing a structured pipeline where ChatGPT, Gemini, Claude, and Grok individually annotate separate partitions, while sharing a common validation set of 20%, we diagnose LLM behavior systematically. We discover a prevalent phenomenon called \"instruction-induced label collapse\", wherein LLMs show a systematic preference towards fallback labels (Other, Neutral, No), leading to high agreement rates but under-detection of minority categories. For example, we find that LLMs failed to detect 79% and 75% of instances with hateful and sarcastic content compared to a human-calibrated reference. Furthermore, we prove that it represents a \"label agreement illusion\", statistically validated via almost null Fleiss' Kappa ($κ\\approx -0.001$) on sarcasm detection. Across 40+ LLMs, we benchmark this annotation bias propagation within the training pipeline, regardless of architectural differences. We release MultiSoc-4D as a diagnostic benchmark for annotation biases in Bengali NLP.",
       "authors": [
-        "Chenyang Zhang",
-        "Yuan Cao"
+        "Souvik Pramanik",
+        "S. M. Riaz Rahman Antu",
+        "Shak Mohammad Abyad",
+        "Md. Ibrahim Khalil",
+        "Md. Shahriar Hussain"
       ],
-      "author_count": 2,
+      "author_count": 5,
       "published": "2026-05-07",
       "updated": "2026-05-07",
       "categories": [
-        "cs.LG",
-        "stat.ML"
+        "cs.CL"
       ],
-      "primary_category": "cs.LG",
+      "primary_category": "cs.CL",
       "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06609v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06609v1",
-      "comments": "94 pages, 8 figures",
+      "pdf_url": "https://arxiv.org/pdf/2605.06940v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06940v1",
+      "comments": "21 pages, 14 figures, 13 tables",
       "journal_ref": null
     },
     {
-      "arxiv_id": "2605.06599v1",
-      "title": "Weight-Decay Turns Transformer Loss Landscapes Villani: Functional-Analytic Foundations for Optimization and Generalization",
-      "abstract": "Weight decay is widely used as a regularizer in large language models, yet its precise role in shaping Transformer loss landscapes remains theoretically underexplored. This paper provides the first rigorous functional-analytic characterization of the standard Transformer objective--cross-entropy loss with $L^2$ regularization--by proving it satisfies Villani's criteria for coercive energy functions. Specifically, we show that the regularized loss $\\mathcal{F}$ is infinitely differentiable, grows at least quadratically, has Gaussian-integrable tails, and satisfies the differential growth condition $-Δ\\mathcal{F} + \\tfrac{1}{s}\\|\\nabla\\mathcal{F}\\|^{2} \\to \\infty$ as $\\|θ\\| \\to \\infty$ for all $s>0$. From this structure, we derive explicit log-Sobolev and Poincaré constants $C_{\\mathrm{LS}} \\leq λ^{-1} + d/λ^{2}$, linking the regularization strength $λ$ and model dimension $d$ to finite-time convergence guarantees for noisy stochastic gradient descent and PAC-Bayesian generalization bounds that tighten with increasing $λ$. To validate our theory, we introduce a scalable Villani diagnostic $Ψ_s(θ) = -Δ\\mathcal{F} + s^{-1}\\|\\nabla \\mathcal{F}\\|^2$ and estimate it efficiently using Hutchinson trace probes in models with over 100M parameters. Experiments on GPT-Neo-125M across Penn Treebank and WikiText-103 confirm the predicted quadratic growth of $Ψ_s$, spectral inflation of the Hessian, and exponential convergence behavior consistent with our log-Sobolev analysis. These results demonstrate that weight decay not only improves generalization empirically but also establishes the mathematical conditions required for fast Langevin mixing and theoretically grounded curvature-aware optimization in deep learning.",
+      "arxiv_id": "2605.06901v1",
+      "title": "Reflections and New Directions for Human-Centered Large Language Models",
+      "abstract": "Large Language Models (LLMs) are increasingly shaping the private and professional lives of users, with numerous applications in business, education, finance, healthcare, law, and science. With this rise in global influence comes greater urgency to build, evaluate, and deploy these systems in a manner that prioritizes not only technical capabilities but also human priorities. This work presents a framework for developing Human-Centered Large Language Models (HCLLMs), which integrates perspectives from Natural Language Processing (NLP), Human-Computer Interaction (HCI), and responsible AI. Considering the ethics, economics, and technical objectives of language modeling, we argue that model developers need to address human concerns, preferences, values, and goals, not only during a cursory post-training stage, but rather with rigor and care at every stage of the pipeline. This paper offers human-centered insights and recommendations for developers at each stage, from system design to data sourcing, model training, evaluation, and responsible deployment. Then we conclude with a case study, applying these insights to understand the future of work with HCLLMs.",
       "authors": [
-        "Abhijit Das",
-        "Sayantan Dutta"
+        "Caleb Ziems",
+        "Dora Zhao",
+        "Rose E. Wang",
+        "Matthew Jörke",
+        "Ahmad Rushdi",
+        "Advit Deepak",
+        "Sunny Yu",
+        "Anshika Agarwal",
+        "Harshvardhan Agarwal",
+        "Gabriela Aranguiz-Dias",
+        "Aditri Bhagirath",
+        "Justine Breuch",
+        "Huanxing Chen",
+        "Ruishi Chen",
+        "Sarah Chen",
+        "Haocheng Fan",
+        "William Fang",
+        "Cat Gonzales Fergesen",
+        "Daniel Frees",
+        "Tian Gao",
+        "Ziqing Huang",
+        "Vishal Jain",
+        "Yucheng Jiang",
+        "Kirill Kalinin",
+        "Su Doga Karaca",
+        "Arpandeep Khatua",
+        "Teland La",
+        "Isabelle Levent",
+        "Miranda Li",
+        "Xinling Li",
+        "Yongce Li",
+        "Angela Liu",
+        "Minsik Oh",
+        "Nathan J. Paek",
+        "Anthony Qin",
+        "Emily Redmond",
+        "Michael J. Ryan",
+        "Aadesh Salecha",
+        "Xiaoxian Shen",
+        "Pranava Singhal",
+        "Shashanka Subrahmanya",
+        "Mei Tan",
+        "Irawadee Thawornbut",
+        "Michelle Vinocour",
+        "Xiaoyue Wang",
+        "Zheng Wang",
+        "Henry Jin Weng",
+        "Pawan Wirawarn",
+        "Shirley Wu",
+        "Sophie Wu",
+        "Yichen Xie",
+        "Patrick Ye",
+        "Sean Zhang",
+        "Yutong Zhang",
+        "Cathy Zhou",
+        "Yiling Zhao",
+        "James Landay",
+        "Diyi Yang"
       ],
-      "author_count": 2,
+      "author_count": 58,
       "published": "2026-05-07",
       "updated": "2026-05-07",
       "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06901v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06901v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06886v1",
+      "title": "TajPersLexon: A Tajik-Persian Lexical Resource and Hybrid Model for Cross-Script Low-Resource NLP",
+      "abstract": "This work introduces TajPersLexon, a curated Tajik--Persian parallel lexical resource of 40,112 word and short-phrase pairs for cross-script lexical retrieval, transliteration, and alignment in low-resource settings. We conduct a comprehensive CPU-only benchmark comparing three methodological families: (i) a lightweight hybrid pipeline, (ii) neural sequence-to-sequence models, and (iii) retrieval methods. Our evaluation establishes that the task is essentially solvable, with neural and retrieval baselines achieving 98-99% top-1 accuracy. Crucially, we demonstrate that while large multilingual sentence transformers fail on this exact lexical matching, our interpretable hybrid model offers a favorable accuracy-efficiency trade-off for practical applications, achieving 96.4% accuracy in an OCR post-correction task. All experiments use fixed random seeds for full reproducibility. The dataset, code, and models will be publicly released.",
+      "authors": [
+        "Mullosharaf K. Arabov"
+      ],
+      "author_count": 1,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "10.18653/v1/2026.silkroadnlp-1.4",
+      "pdf_url": "https://arxiv.org/pdf/2605.06886v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06886v1",
+      "comments": "Published in The Proceedings of the First Workshop on NLP and LLMs for the Iranian Language Family (SilkRoadNLP 2026), pages 29-37, Rabat, Morocco. Association for Computational Linguistics",
+      "journal_ref": "Proceedings of the First Workshop on NLP and LLMs for the Iranian Language Family (SilkRoadNLP 2026), pages 29-37"
+    },
+    {
+      "arxiv_id": "2605.06318v1",
+      "title": "Who and What? Using Linguistic Features and Annotator Characteristics to Analyze Annotation Variation",
+      "abstract": "Human label variation has been established as a central phenomenon in NLP: the perspectives different annotators have on the same item need to be embraced. Data collection practices thus shifted towards increasing the annotator numbers and releasing disaggregated datasets, harmful language being most resourced due to its high subjectivity. While this resulted in rich information about \\textit{who} annotated (sociodemographics, attitudes, etc.), the \\textit{what} (e.g., linguistic properties of items), and their interplay has received little attention. We present the first large-scale analysis of four reference datasets for harmful language detection, bringing together annotator characteristics, linguistic properties of the items, and their interactions in a statistically informed picture. We find that interactions are crucial, revealing intersectional effects ignored in previous work, and that a strong role is played by lexical cues and annotator attitudes. Effect patterns, however, vary considerably across datasets. This urges caution about generalization and transferability.",
+      "authors": [
+        "Maximilian Maurer",
+        "Maximilian Linde",
+        "Gabriella Lapesa"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06318v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06318v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06191v1",
+      "title": "Systematic Evaluation of Large Language Models for Post-Discharge Clinical Action Extraction",
+      "abstract": "The work in this paper evaluates zero-shot and few-shot large language models (LLMs) for safety-critical clinical action extraction using the CLIP discharge-note dataset, with particular emphasis on transitions of care and post-discharge patient safety. To manage the complexity of clinical documentation, we introduce a two-stage extraction framework that decomposes discharge notes, that are written in narrative form, into fine-grained, explicitly actionable clinical tasks through a staged prompting strategy. Our contributions include a systematic assessment of generative LLMs for clinical action extraction, a detailed comparison between general-purpose LLMs and task-specific supervised BERT-based models, and an analysis of annotation inconsistencies across different action categories. We show that contemporary LLMs achieve performance comparable to or exceeding supervised models on binary actionability detection, while supervised baselines retain a meaningful advantage on fine-grained multi-label category classification, despite the absence of task-specific fine-tuning and under strict data-privacy constraints. Qualitative error analysis reveals that many failures stem from misalignment between model reasoning and dataset annotation conventions, particularly in cases involving implicit clinical actions and rigid structural labeling rules. These results indicate that reported performance reflects model limitations due to lack of clinical reasoning, that is not captured by plain annotations. Labels without rationales make it impossible to distinguish clinical reasoning failures from annotation convention mismatches. Advancing clinical NLP requires reasoning-annotated datasets that document why specific spans are actionable, not merely which spans were labeled, enabling proper evaluation of model clinical understanding.",
+      "authors": [
+        "Shivali Dalmia",
+        "Ananya Mantravadi",
+        "Prasanna Desikan"
+      ],
+      "author_count": 3,
+      "published": "2026-05-07",
+      "updated": "2026-05-07",
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06191v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06191v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.05463v1",
+      "title": "Robustness of Graph Self-Supervised Learning to Real-World Noise: A Case Study on Text-Driven Biomedical Graphs",
+      "abstract": "Graph Self-Supervised Learning (GSSL) offers a powerful paradigm for learning graph representations without labeled data. However, existing work assumes clean, manually curated graphs. Recent advances in NLP enable the large-scale automatic extraction of knowledge graphs from text, opening new opportunities for GSSL while introducing substantial real-world noise. This type of noise remains largely unexplored, as prior robustness studies typically rely on synthetic perturbations. To address this gap, we present the first comprehensive evaluation of GSSL methods on text-driven graphs for unsupervised term typing. We introduce Noise-Aware Text-Driven Graph GSSL (NATD-GSSL), a unified framework that combines automatic graph construction, graph refinement, and GSSL. Our evaluation follows a dual-graph protocol that contrasts a noisy graph derived from MedMentions with a clean Unified Medical Language System (UMLS) reference graph, aligned through a shared gold standard. Our results reveal variability in robustness across both pretext tasks and Graph Neural Network (GNN) architectures. Relation reconstruction is highly sensitive to noise and benefits from well-defined schemas, whereas feature reconstruction is considerably more robust, achieving performance comparable to clean-graph settings. Contrastive objectives are generally less affected by noise but depend strongly on alignment with downstream tasks. GNN architecture also plays a critical role: bidirectional relational message-passing designs are better suited to noisy, text-driven graphs, while unidirectional relational ones perform best on clean graphs. Overall, NATD-GSSL provides practical guidance for applying GSSL to real-world, noisy graphs and achieves up to a 7\\% improvement over pretrained language model baselines. All code and benchmarks are publicly available at https://github.com/OthmaneKabal/MC2GAE.",
+      "authors": [
+        "Othmane Kabal",
+        "Mounira Harzallah",
+        "Fabrice Guillet",
+        "Hideaki Takeda",
+        "Ryutaro Ichise"
+      ],
+      "author_count": 5,
+      "published": "2026-05-06",
+      "updated": "2026-05-06",
+      "categories": [
         "cs.LG",
-        "eess.AS"
+        "cs.AI"
       ],
       "primary_category": "cs.LG",
       "doi": null,
-      "pdf_url": "https://arxiv.org/pdf/2605.06599v1",
-      "abstract_url": "https://arxiv.org/abs/2605.06599v1",
-      "comments": "17 pages, 10 figures",
+      "pdf_url": "https://arxiv.org/pdf/2605.05463v1",
+      "abstract_url": "https://arxiv.org/abs/2605.05463v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.06708v1",
+      "title": "Visual Text Compression as Measure Transport",
+      "abstract": "Visual text compression (VTC) promises efficient long-context processing by rendering text into an image and re-encoding it with a vision-language model, often producing $3$--$20\\times$ fewer decoder tokens than subword tokenization. Yet token savings do not translate predictably into downstream utility: on some tasks the visual path matches or exceeds the text path, on others it collapses, and the compression ratio itself does not predict which regime will occur. The missing quantity is therefore not another summary of efficiency, but a principled measure of task-relevant information loss induced by visual encoding. We address this problem by formulating VTC in the language of measure transport. Treating text and visual tokens as empirical probability measures, we show that the ViT patch encoder induces a push-forward map whose transport cost decomposes into a precision cost from within-patch aggregation and a coverage cost from cross-patch fragmentation. Both terms are estimable from downstream-label-free probes. This formulation yields two operational consequences: a downstream-label-free routing criterion that selects whether to use the visual path for a given input or benchmark instance, and a transport-informed foveation mechanism that re-encodes high-cost regions at higher resolution. Across $24$ NLP datasets at Qwen3-4B, our label-free rule matches the per-dataset oracle on $17/24$ datasets ($70.8\\%$), and improves the average task score by $+3.3\\%$ with $-10.3\\%$ average tokens relative to a pure-LLM.",
+      "authors": [
+        "Lv Tang",
+        "Tianyi Zheng",
+        "Yang Liu",
+        "Bo Li",
+        "Xingyu Li"
+      ],
+      "author_count": 5,
+      "published": "2026-05-06",
+      "updated": "2026-05-06",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.06708v1",
+      "abstract_url": "https://arxiv.org/abs/2605.06708v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.05151v1",
+      "title": "Superposition Is Not Necessary: A Mechanistic Interpretability Analysis of Transformer Representations for Time Series Forecasting",
+      "abstract": "Transformer architectures have been widely adopted for time series forecasting, yet whether the representational mechanisms that make them powerful in NLP actually engage on time series data remains unexplored. The persistent competitiveness of simple linear models such as DLinear has fueled ongoing debate, but no mechanistic explanation for this phenomenon has been offered. We address this gap by applying sparse autoencoders (SAEs), a tool from mechanistic interpretability, to probe the internal representations of PatchTST. We first establish that a single-layer, narrow-dimensional transformer matches the forecasting performance of deeper configurations across commonly used benchmarks. We then train SAEs on the post-GELU intermediate FFN activations with dictionary sizes ranging from 0.5x to 4.0x the native dimensionality. Expanding the dictionary yields negligible downstream performance change (average 0.214%), with large portions of overcomplete dictionaries remaining inactive. Targeted causal interventions on dominant latent features produce minimal forecast perturbation. Across all evaluated settings, we observe no empirical evidence that the analyzed FFN representations rely on strong superposition. Instead, the representations remain sparse, stable under aggressive dictionary expansion, and largely insensitive to latent interventions. These results demonstrate that superposition is not necessary for competitive performance on standard forecasting benchmarks, suggesting they may not demand the rich compositional representations that drive transformer success in language modeling, and helping explain the persistent competitiveness of simple linear models",
+      "authors": [
+        "Alper Yıldırım"
+      ],
+      "author_count": 1,
+      "published": "2026-05-06",
+      "updated": "2026-05-06",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.05151v1",
+      "abstract_url": "https://arxiv.org/abs/2605.05151v1",
+      "comments": "13 pages, 5 tables",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.04746v2",
+      "title": "Distributed Energy System Design including Unbalanced AC Power Flow for Large LV Networks with ADMM",
+      "abstract": "With the addition of large numbers of distributed energy resources (DERs) to distribution networks comes the increasing risk that their operation may violate the safety constraints of these networks. The problem considered in this paper is that of combined siting, sizing and dispatch of these DERs, also known as distributed energy system (DES) design, to help meet electrical and heat loads within the network. Here, the operation of these DERs is modelled, along with the unbalanced three-phase alternating current (AC) power flow in the network. When this network power flow is considered, this admits a non-convex mixed-integer nonlinear program (MINLP) model formulation which scales poorly with network size in terms of solve time. To address this, the problem is decomposed into a series of algorithmic steps, starting with a mixed-integer linear program (MILP) formulation that does not consider network constraints, then fixing binary variables, adding power flow constraints and solving as a nonlinear program (NLP) and finally removing operational binary variables and replacing them with a complementarity reformulation. As the main contributors to the overall solve time, the NLP and Complementarity steps are solved using a hybrid spatial/temporal decomposition strategy and the alternating direction method of multipliers (ADMM) distributed optimisation method. Results are presented for networks based on the European low voltage test feeder with up to 55 loads and 120 timepoints, with the ADMM approach showing speed-ups of up to 13x when considering parallel computation of the subproblems, for a maximum observed optimality gap of 0.61%.",
+      "authors": [
+        "Robert Steven",
+        "Oleksiy V. Klymenko",
+        "Michael Short"
+      ],
+      "author_count": 3,
+      "published": "2026-05-06",
+      "updated": "2026-05-08",
+      "categories": [
+        "math.OC"
+      ],
+      "primary_category": "math.OC",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.04746v2",
+      "abstract_url": "https://arxiv.org/abs/2605.04746v2",
+      "comments": "54 pages, 26 figures",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.04583v1",
+      "title": "TajikNLP: An Open-Source Toolkit for Comprehensive Text Processing of Tajik (Cyrillic Script)",
+      "abstract": "The Tajik language, written in Cyrillic script, remains severely under-resourced in terms of publicly available natural language processing (NLP) toolkits, hindering both linguistic research and applied development. This paper introduces TajikNLP, an open-source Python library that provides the first comprehensive pipeline for processing authentic Tajik text while preserving the original Cyrillic orthography. The library implements a modular architecture centered around a unified Doc object, enabling sequential application of components for cleaning, normalization, tokenization (including subword BPE), morphemic segmentation, part-of-speech tagging, stemming, lemmatization, and sentence splitting. A novel unified morphology engine is introduced, offering controlled and deep analysis modes that significantly improve handling of Tajik's agglutinative nominal and verbal inflections. The release further incorporates a lexicon-based sentiment analyser and pre-trained Word2Vec/FastText embeddings loaded directly from the Hugging Face Hub. To ensure reproducibility and facilitate future research, four accompanying linguistic datasets -- a POS-tagged corpus (52.5k entries), a sentiment lexicon (3.5k entries), a toponym gazetteer (5.6k entries), and a personal names dataset (3.8k entries) -- have been openly published under permissive licenses. The library's reliability is validated by an extensive test suite of 616 automated tests achieving 93% source code coverage. TajikNLP thus establishes a foundational technological infrastructure for Tajik language processing, lowering the barrier to entry for both academic and industrial applications in low-resource Cyrillic-script environments.",
+      "authors": [
+        "Mullosharaf K. Arabov"
+      ],
+      "author_count": 1,
+      "published": "2026-05-06",
+      "updated": "2026-05-06",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.04583v1",
+      "abstract_url": "https://arxiv.org/abs/2605.04583v1",
+      "comments": "Preprint",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.04298v1",
+      "title": "Towards Self-Referential Analytic Assessment: A Profile-Based Approach to L2 Writing Evaluation with LLMs",
+      "abstract": "Automated essay scoring (AES) research often relies on rank-based correlation metrics to validate analytic assessment. However, such metrics obscure both intrinsic intercorrelations among analytic dimensions that arise from the structure of writing proficiency itself and halo effects, whereby holistic impressions bleed into fine-grained component scores. As a result, high correlations may mask a system's true diagnostic behaviour. In this study, we propose a novel self-referential assessment evaluation framework that focuses on identifying intra-learner strengths and weaknesses rather than assessing inter-learner rankings. We conduct experiments on the publicly available ICNALE GRA, a uniquely dense second-language writing dataset annotated holistically and analytically by up to 80 trained raters. To obtain reliable reference scores, we apply two-facet Rasch modelling to calibrate rater severity and derive fair average scores across ten analytic aspects and holistic proficiency. We compare the analytic scoring performance of human operational raters and three large language models (LLMs) in a zero-shot setting. Our results show that LLMs tend to outperform single human raters in identifying relative weaknesses (negative feedback) across several proficiency aspects, while human raters remain stronger at identifying relative strengths (positive feedback). Overall, our findings highlight the limitations of rank-based evaluation for analytic assessment and demonstrate the value of intra-learner, profile-based methods for assessing and deploying LLMs in AES.",
+      "authors": [
+        "Stefano Bannò",
+        "Kate Knill",
+        "Mark Gales"
+      ],
+      "author_count": 3,
+      "published": "2026-05-05",
+      "updated": "2026-05-05",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.04298v1",
+      "abstract_url": "https://arxiv.org/abs/2605.04298v1",
+      "comments": "Accepted for the 21st Workshop on Innovative Use of NLP for Building Educational Applications",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.04208v1",
+      "title": "Nsanku: Evaluating Zero-Shot Translation Performance of LLMs for Ghanaian Languages",
+      "abstract": "Large language models (LLMs) have demonstrated impressive multilingual capabilities for well-resourced languages, yet their performance on low-resource African languages remains poorly understood and largely unevaluated. This paper presents Nsanku, a systematic benchmark that evaluates the zero-shot machine translation performance of 19 open-weight and proprietary LLMs across 43 Ghanaian languages paired with English. Evaluation sentences were sourced from the YouVersion Bible platform, providing 300 sentence pairs per language. Two complementary automatic metrics are employed: Bilingual Evaluation Understudy (BLEU) and Character n-gram F-Score (chrF), alongside an average accuracy score and a cross-language consistency dimension. Nsanku represents the most comprehensive LLM translation evaluation for Ghanaian languages conducted to date. Results show that gemini-2.5-flash achieves the highest overall average score of 26.88 (BLEU: 24.60, chrF: 29.16), followed by claude-sonnet-4-5 at 24.87 (BLEU: 22.46, chrF: 27.28) and gpt-4.1 at 23.20 (BLEU: 21.15, chrF: 25.24). Among open-weight models, kimi-k2-instruct-0905 leads at an average score of 20.87. A critical finding from the consistency analysis is that no model and no language reached the Leaders quadrant of high performance and high consistency simultaneously, indicating that current LLMs are not yet reliably usable for Ghanaian language translation at scale. Siwu achieved the highest per-language average score at 25.73 while Nkonya scored lowest at 11.65. Nsanku establishes a publicly available, community-extensible evaluation infrastructure for African language NLP research.",
+      "authors": [
+        "Stephen E. Moore",
+        "Mich-Seth Owusu",
+        "Akwasi Asare",
+        "Lawrence Adu Gyamfi",
+        "Paul Azunre",
+        "Joel Budu",
+        "Jonathan Asiamah",
+        "Elias Dzobo",
+        "Kelvin Newman",
+        "Edmund O. Benefo",
+        "Gerhardt Datsomor",
+        "Onesimus Addo Appiah",
+        "Ama Branoa Banful",
+        "Lucas Woedem Kpatah",
+        "Saani Mustapha Deishini",
+        "John Ayernor"
+      ],
+      "author_count": 16,
+      "published": "2026-05-05",
+      "updated": "2026-05-05",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.04208v1",
+      "abstract_url": "https://arxiv.org/abs/2605.04208v1",
+      "comments": null,
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.03799v1",
+      "title": "Natural Language Processing: A Comprehensive Practical Guide from Tokenisation to RLHF",
+      "abstract": "This preprint presents a systematic, research-oriented practicum that guides the reader through the entire modern NLP pipeline: from tokenisation and vectorisation to fine-tuning of large language models, retrieval-augmented generation, and reinforcement learning from human feedback. Twelve hands-on sessions combine concise theory with detailed implementation plans, formalised evaluation metrics, and transparent assessment criteria. The work is not a conventional textbook: it is designed as a reproducible research artefact where every session requires publishing code, models, and reports in public repositories. All experiments are conducted on a single evolving corpus, and the work advocates open-weight models over commercial APIs, with special attention to the Hugging Face ecosystem. The material is enriched by original research on low-resource languages, incorporating linguistic resources for Tajik and Tatar (subword tokenisers, embeddings, lexical databases, and transliteration benchmarks), demonstrating how modern NLP can be adapted to data-scarce environments. Designed for senior undergraduates, graduate students, and practising developers seeking to implement, compare, and deploy methods from classical ML to state-of-the-art LLM-based systems.",
+      "authors": [
+        "Mullosharaf K. Arabov"
+      ],
+      "author_count": 1,
+      "published": "2026-05-05",
+      "updated": "2026-05-05",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.03799v1",
+      "abstract_url": "https://arxiv.org/abs/2605.03799v1",
+      "comments": "Preprint",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.03701v1",
+      "title": "SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification",
+      "abstract": "Event Causality Identification (ECI) requires models to determine whether a given pair of events in a context exhibits a causal relationship. While Large Language Models (LLMs) have demonstrated strong performance across various NLP tasks, their effectiveness in ECI remains limited due to biases in causal reasoning, often leading to overprediction of causal relationships (causal hallucination). To mitigate these issues and enhance LLM performance in ECI, we propose SERE, a structural example retrieval framework that leverages LLMs' few-shot learning capabilities. SERE introduces an innovative retrieval mechanism based on three structural concepts: (i) Conceptual Path Metric, which measures the conceptual relationship between events using edit distance in ConceptNet; (ii) Syntactic Metric, which quantifies structural similarity through tree edit distance on syntactic trees; and (iii) Causal Pattern Filtering, which filters examples based on predefined causal structures using LLMs. By integrating these structural retrieval strategies, SERE selects more relevant examples to guide LLMs in causal reasoning, mitigating bias and improving accuracy in ECI tasks. Extensive experiments on multiple ECI datasets validate the effectiveness of SERE. The source code is publicly available at https://github.com/DMIRLAB-Group/SERE.",
+      "authors": [
+        "Zhifeng Hao",
+        "Zhongjie Chen",
+        "Junhao Lu",
+        "Shengyin Yu",
+        "Guimin Hu",
+        "Keli Zhang",
+        "Ruichu Cai",
+        "Boyan Xu"
+      ],
+      "author_count": 8,
+      "published": "2026-05-05",
+      "updated": "2026-05-05",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.03701v1",
+      "abstract_url": "https://arxiv.org/abs/2605.03701v1",
+      "comments": "Accepted to Findings of ACL 2026",
+      "journal_ref": null
+    },
+    {
+      "arxiv_id": "2605.03624v1",
+      "title": "Annotation Quality in Aspect-Based Sentiment Analysis: A Case Study Comparing Experts, Students, Crowdworkers, and Large Language Model",
+      "abstract": "Aspect-Based Sentiment Analysis (ABSA) enables fine-grained opinion analysis by identifying sentiments toward specific aspects or targets within a text. While ABSA has been widely studied for English, research on other languages such as German remains limited, largely due to the lack of high-quality annotated datasets. This paper examines how different annotation sources influence the development of German ABSA. To this end, an existing dataset is re-annotated by experts to establish a ground truth, which serves as a reference for evaluating annotations produced by students, crowdworkers, Large Language Models (LLMs), and experts. Annotation quality is compared using Inter-Annotator Agreement (IAA) and its impact on downstream model performance for different ABSA subtasks. The evaluation focuses on Aspect Category Sentiment Analysis (ACSA) and Target Aspect Sentiment Detection (TASD). We apply State-of-the-Art (SOTA) methods for ABSA, including BERT-, T5-, and LLaMA-based approaches to assess performance differences, spanning fine-tuning and in-context learning with instruction prompts. The findings provide practical insights into trade-offs between annotation reliability and efficiency, offering guidance for dataset construction in under-resourced Natural Language Processing (NLP) scenarios.",
+      "authors": [
+        "Niklas Donhauser",
+        "Jakob Fehle",
+        "Nils Constantin Hellwig",
+        "Markus Weinberger",
+        "Udo Kruschwitz",
+        "Christian Wolff"
+      ],
+      "author_count": 6,
+      "published": "2026-05-05",
+      "updated": "2026-05-05",
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": null,
+      "pdf_url": "https://arxiv.org/pdf/2605.03624v1",
+      "abstract_url": "https://arxiv.org/abs/2605.03624v1",
+      "comments": null,
       "journal_ref": null
     }
   ]

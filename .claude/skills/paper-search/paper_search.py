@@ -8,8 +8,14 @@ import xml.etree.ElementTree as ET
 import json
 import os
 import re
+import time
 from datetime import datetime
 from typing import List, Dict, Optional
+
+# arXiv API rate limit: 1 request per 3 seconds
+REQUEST_DELAY = 3  # seconds between requests
+MAX_RETRIES = 3
+RETRY_DELAY = 30  # seconds to wait on rate limit
 
 
 def clean_text(text: str) -> str:
@@ -54,18 +60,46 @@ def search_papers(query: str, max_results: int = 20,
     print(f"Searching arXiv for: '{query}'")
     print(f"URL: {url[:100]}...")
     
-    try:
-        response = requests.get(url, timeout=60)
-        response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"Network error: {e}")
-        return {
-            "query": query,
-            "search_time": datetime.now().isoformat(),
-            "total_results": 0,
-            "papers": [],
-            "error": str(e)
-        }
+    # Request with retry and rate limiting
+    for attempt in range(MAX_RETRIES):
+        try:
+            # Rate limiting: wait before each request
+            if attempt > 0:
+                print(f"Waiting {RETRY_DELAY}s before retry...")
+                time.sleep(RETRY_DELAY)
+            else:
+                time.sleep(REQUEST_DELAY)
+            
+            response = requests.get(url, timeout=60)
+            
+            # Check for rate limit (429)
+            if response.status_code == 429:
+                print(f"Rate limit exceeded (429). Attempt {attempt + 1}/{MAX_RETRIES}")
+                if attempt < MAX_RETRIES - 1:
+                    continue
+                else:
+                    return {
+                        "query": query,
+                        "search_time": datetime.now().isoformat(),
+                        "total_results": 0,
+                        "papers": [],
+                        "error": "Rate limit exceeded. Please wait and try again."
+                    }
+            
+            response.raise_for_status()
+            break  # Success
+            
+        except requests.exceptions.RequestException as e:
+            if attempt == MAX_RETRIES - 1:
+                print(f"Network error after {MAX_RETRIES} attempts: {e}")
+                return {
+                    "query": query,
+                    "search_time": datetime.now().isoformat(),
+                    "total_results": 0,
+                    "papers": [],
+                    "error": str(e)
+                }
+            print(f"Network error: {e}. Retrying...")
     
     # Parse XML response
     papers = parse_arxiv_response(response.text)

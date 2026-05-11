@@ -1,7 +1,7 @@
 {
-  "analysis_time": "2026-05-10T22:56:47.611670",
-  "query": "transformer architecture",
-  "total_papers": 10,
+  "analysis_time": "2026-05-11T18:34:21.961877",
+  "query": "NLP",
+  "total_papers": 20,
   "weights": {
     "similarity": 0.8,
     "same_author": 0.2
@@ -10,153 +10,347 @@
   "pagerank_scores": [
     {
       "rank": 1,
-      "arxiv_id": "2605.06665v1",
-      "title": "UniPool: A Globally Shared Expert Pool for Mixture-of-Experts",
+      "arxiv_id": "2605.03624v1",
+      "title": "Annotation Quality in Aspect-Based Sentiment Analysis: A Case Study Comparing Experts, Students, Crowdworkers, and Large Language Model",
       "authors": [
-        "Minbin Huang",
-        "Han Shi",
-        "Chuanyang Zheng",
-        "Yimeng Wu",
-        "Guoxuan Chen",
-        "Xintong Yu",
-        "Yichun Yin",
-        "Hong Cheng"
+        "Niklas Donhauser",
+        "Jakob Fehle",
+        "Nils Constantin Hellwig",
+        "Markus Weinberger",
+        "Udo Kruschwitz",
+        "Christian Wolff"
       ],
-      "published": "2026-05-07",
-      "pagerank_score": 0.179691,
-      "connections": 2
+      "published": "2026-05-05",
+      "pagerank_score": 0.133629,
+      "connections": 11
     },
     {
       "rank": 2,
-      "arxiv_id": "2605.06609v1",
-      "title": "Transformers Efficiently Perform In-Context Logistic Regression via Normalized Gradient Descent",
+      "arxiv_id": "2605.03799v1",
+      "title": "Natural Language Processing: A Comprehensive Practical Guide from Tokenisation to RLHF",
       "authors": [
-        "Chenyang Zhang",
-        "Yuan Cao"
+        "Mullosharaf K. Arabov"
       ],
-      "published": "2026-05-07",
-      "pagerank_score": 0.176252,
-      "connections": 3
+      "published": "2026-05-05",
+      "pagerank_score": 0.113544,
+      "connections": 10
     },
     {
       "rank": 3,
-      "arxiv_id": "2605.06610v1",
-      "title": "SoftSAE: Dynamic Top-K Selection for Adaptive Sparse Autoencoders",
+      "arxiv_id": "2605.04208v1",
+      "title": "Nsanku: Evaluating Zero-Shot Translation Performance of LLMs for Ghanaian Languages",
       "authors": [
-        "Jakub Stępień",
-        "Marcin Mazur",
-        "Jacek Tabor",
-        "Przemysław Spurek"
+        "Stephen E. Moore",
+        "Mich-Seth Owusu",
+        "Akwasi Asare",
+        "Lawrence Adu Gyamfi",
+        "Paul Azunre",
+        "Joel Budu",
+        "Jonathan Asiamah",
+        "Elias Dzobo",
+        "Kelvin Newman",
+        "Edmund O. Benefo",
+        "Gerhardt Datsomor",
+        "Onesimus Addo Appiah",
+        "Ama Branoa Banful",
+        "Lucas Woedem Kpatah",
+        "Saani Mustapha Deishini",
+        "John Ayernor"
       ],
-      "published": "2026-05-07",
-      "pagerank_score": 0.169099,
-      "connections": 3
+      "published": "2026-05-05",
+      "pagerank_score": 0.100735,
+      "connections": 10
     },
     {
       "rank": 4,
-      "arxiv_id": "2605.06663v1",
-      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "arxiv_id": "2605.06901v1",
+      "title": "Reflections and New Directions for Human-Centered Large Language Models",
       "authors": [
-        "Ryan Wang",
-        "Akshita Bhagia",
-        "Sewon Min"
+        "Caleb Ziems",
+        "Dora Zhao",
+        "Rose E. Wang",
+        "Matthew Jörke",
+        "Ahmad Rushdi",
+        "Advit Deepak",
+        "Sunny Yu",
+        "Anshika Agarwal",
+        "Harshvardhan Agarwal",
+        "Gabriela Aranguiz-Dias",
+        "Aditri Bhagirath",
+        "Justine Breuch",
+        "Huanxing Chen",
+        "Ruishi Chen",
+        "Sarah Chen",
+        "Haocheng Fan",
+        "William Fang",
+        "Cat Gonzales Fergesen",
+        "Daniel Frees",
+        "Tian Gao",
+        "Ziqing Huang",
+        "Vishal Jain",
+        "Yucheng Jiang",
+        "Kirill Kalinin",
+        "Su Doga Karaca",
+        "Arpandeep Khatua",
+        "Teland La",
+        "Isabelle Levent",
+        "Miranda Li",
+        "Xinling Li",
+        "Yongce Li",
+        "Angela Liu",
+        "Minsik Oh",
+        "Nathan J. Paek",
+        "Anthony Qin",
+        "Emily Redmond",
+        "Michael J. Ryan",
+        "Aadesh Salecha",
+        "Xiaoxian Shen",
+        "Pranava Singhal",
+        "Shashanka Subrahmanya",
+        "Mei Tan",
+        "Irawadee Thawornbut",
+        "Michelle Vinocour",
+        "Xiaoyue Wang",
+        "Zheng Wang",
+        "Henry Jin Weng",
+        "Pawan Wirawarn",
+        "Shirley Wu",
+        "Sophie Wu",
+        "Yichen Xie",
+        "Patrick Ye",
+        "Sean Zhang",
+        "Yutong Zhang",
+        "Cathy Zhou",
+        "Yiling Zhao",
+        "James Landay",
+        "Diyi Yang"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.166256,
-      "connections": 2
+      "pagerank_score": 0.079753,
+      "connections": 9
     },
     {
       "rank": 5,
-      "arxiv_id": "2605.06644v1",
-      "title": "Edge-specific signal propagation on mature chromophore-region 3D mechanism graphs for fluorescent protein quantum-yield prediction",
+      "arxiv_id": "2605.07446v1",
+      "title": "SSP-based construction of evaluation-annotated data for fine-grained aspect-based sentiment analysis",
       "authors": [
-        "Yuchen Xiong",
-        "Swee Keong Yeap",
-        "Steven Aw Yoong Kit"
+        "Suwon Choi",
+        "Shinwoo Kim",
+        "Changhoe Hwang",
+        "Gwanghoon Yoo",
+        "Eric Laporte",
+        "Jeesun Nam"
       ],
-      "published": "2026-05-07",
-      "pagerank_score": 0.082172,
-      "connections": 1
+      "published": "2026-05-08",
+      "pagerank_score": 0.072553,
+      "connections": 6
     },
     {
       "rank": 6,
-      "arxiv_id": "2605.06611v1",
-      "title": "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity",
+      "arxiv_id": "2605.06191v1",
+      "title": "Systematic Evaluation of Large Language Models for Post-Discharge Clinical Action Extraction",
       "authors": [
-        "Siquan Li",
-        "Kaiqi Jiang",
-        "Jiacheng Sun",
-        "Tianyang Hu"
+        "Shivali Dalmia",
+        "Ananya Mantravadi",
+        "Prasanna Desikan"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.070768,
-      "connections": 1
+      "pagerank_score": 0.070785,
+      "connections": 8
     },
     {
       "rank": 7,
-      "arxiv_id": "2605.06599v1",
-      "title": "Weight-Decay Turns Transformer Loss Landscapes Villani: Functional-Analytic Foundations for Optimization and Generalization",
+      "arxiv_id": "2605.04583v1",
+      "title": "TajikNLP: An Open-Source Toolkit for Comprehensive Text Processing of Tajik (Cyrillic Script)",
       "authors": [
-        "Abhijit Das",
-        "Sayantan Dutta"
+        "Mullosharaf K. Arabov"
       ],
-      "published": "2026-05-07",
-      "pagerank_score": 0.062369,
-      "connections": 1
+      "published": "2026-05-06",
+      "pagerank_score": 0.062016,
+      "connections": 5
     },
     {
       "rank": 8,
-      "arxiv_id": "2605.06628v1",
-      "title": "LiVeAction: a Lightweight, Versatile, and Asymmetric Neural Codec Design for Real-time Operation",
+      "arxiv_id": "2605.04298v1",
+      "title": "Towards Self-Referential Analytic Assessment: A Profile-Based Approach to L2 Writing Evaluation with LLMs",
       "authors": [
-        "Dan Jacobellis",
-        "Neeraja J. Yadwadkar"
+        "Stefano Bannò",
+        "Kate Knill",
+        "Mark Gales"
       ],
-      "published": "2026-05-07",
-      "pagerank_score": 0.057247,
-      "connections": 1
+      "published": "2026-05-05",
+      "pagerank_score": 0.059618,
+      "connections": 7
     },
     {
       "rank": 9,
-      "arxiv_id": "2605.06648v1",
-      "title": "A preliminary exploration of the effects of baseline length for the LIFE space mission",
+      "arxiv_id": "2605.06886v1",
+      "title": "TajPersLexon: A Tajik-Persian Lexical Resource and Hybrid Model for Cross-Script Low-Resource NLP",
       "authors": [
-        "Jonah T. Hansen",
-        "Thomas Birbacher",
-        "Felix A. Dannert",
-        "Philipp Huber",
-        "Andrea Fortier",
-        "Adrian M. Glauser",
-        "Jens Kammerer",
-        "Romain Laugier",
-        "Lia Sartori",
-        "Sascha P. Quanz"
+        "Mullosharaf K. Arabov"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.018072,
-      "connections": 0
+      "pagerank_score": 0.053811,
+      "connections": 4
     },
     {
       "rank": 10,
-      "arxiv_id": "2605.06645v1",
-      "title": "Electrically controlled Heat Assisted Magnetic Recording in Intercalated 2D Magnets",
+      "arxiv_id": "2605.06940v1",
+      "title": "MultiSoc-4D: A Benchmark for Diagnosing Instruction-Induced Label Collapse in Closed-Set LLM Annotation of Bengali Social Media",
       "authors": [
-        "Josue Rodriguez",
-        "Ruishi Qi",
-        "Catherine Xu",
-        "Feng Wang",
-        "James G. Analytis",
-        "Hossein Taghinejad"
+        "Souvik Pramanik",
+        "S. M. Riaz Rahman Antu",
+        "Shak Mohammad Abyad",
+        "Md. Ibrahim Khalil",
+        "Md. Shahriar Hussain"
       ],
       "published": "2026-05-07",
-      "pagerank_score": 0.018072,
+      "pagerank_score": 0.052522,
+      "connections": 6
+    },
+    {
+      "rank": 11,
+      "arxiv_id": "2605.03701v1",
+      "title": "SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification",
+      "authors": [
+        "Zhifeng Hao",
+        "Zhongjie Chen",
+        "Junhao Lu",
+        "Shengyin Yu",
+        "Guimin Hu",
+        "Keli Zhang",
+        "Ruichu Cai",
+        "Boyan Xu"
+      ],
+      "published": "2026-05-05",
+      "pagerank_score": 0.040645,
+      "connections": 5
+    },
+    {
+      "rank": 12,
+      "arxiv_id": "2605.06318v1",
+      "title": "Who and What? Using Linguistic Features and Annotator Characteristics to Analyze Annotation Variation",
+      "authors": [
+        "Maximilian Maurer",
+        "Maximilian Linde",
+        "Gabriella Lapesa"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.033481,
+      "connections": 4
+    },
+    {
+      "rank": 13,
+      "arxiv_id": "2605.07453v1",
+      "title": "Data Contamination in Neural Hieroglyphic Translation: A Reproducibility Study",
+      "authors": [
+        "Ammar Toutou",
+        "Abdelrahman Harb",
+        "Christine Basta"
+      ],
+      "published": "2026-05-08",
+      "pagerank_score": 0.030596,
+      "connections": 2
+    },
+    {
+      "rank": 14,
+      "arxiv_id": "2605.07701v1",
+      "title": "Guidance Is Not a Hyperparameter: Learning Dynamic Control in Diffusion Language Models",
+      "authors": [
+        "Fan Zhou",
+        "Tim Van de Cruys"
+      ],
+      "published": "2026-05-08",
+      "pagerank_score": 0.022365,
+      "connections": 2
+    },
+    {
+      "rank": 15,
+      "arxiv_id": "2605.06982v1",
+      "title": "FastOmniTMAE: Parallel Clause Learning for Scalable and Hardware-Efficient Tsetlin Embeddings",
+      "authors": [
+        "Ahmed K. Kadhim",
+        "Lei Jiao",
+        "Rishad Shafik",
+        "Ole-Christoffer Granmo",
+        "Mayur Kishor Shende"
+      ],
+      "published": "2026-05-07",
+      "pagerank_score": 0.022173,
+      "connections": 2
+    },
+    {
+      "rank": 16,
+      "arxiv_id": "2605.06708v1",
+      "title": "Visual Text Compression as Measure Transport",
+      "authors": [
+        "Lv Tang",
+        "Tianyi Zheng",
+        "Yang Liu",
+        "Bo Li",
+        "Xingyu Li"
+      ],
+      "published": "2026-05-06",
+      "pagerank_score": 0.015628,
+      "connections": 1
+    },
+    {
+      "rank": 17,
+      "arxiv_id": "2605.07606v1",
+      "title": "Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification",
+      "authors": [
+        "Philipp Steigerwald",
+        "Eric Rudolph",
+        "Jens Albrecht"
+      ],
+      "published": "2026-05-08",
+      "pagerank_score": 0.009036,
+      "connections": 0
+    },
+    {
+      "rank": 18,
+      "arxiv_id": "2605.05463v1",
+      "title": "Robustness of Graph Self-Supervised Learning to Real-World Noise: A Case Study on Text-Driven Biomedical Graphs",
+      "authors": [
+        "Othmane Kabal",
+        "Mounira Harzallah",
+        "Fabrice Guillet",
+        "Hideaki Takeda",
+        "Ryutaro Ichise"
+      ],
+      "published": "2026-05-06",
+      "pagerank_score": 0.009036,
+      "connections": 0
+    },
+    {
+      "rank": 19,
+      "arxiv_id": "2605.05151v1",
+      "title": "Superposition Is Not Necessary: A Mechanistic Interpretability Analysis of Transformer Representations for Time Series Forecasting",
+      "authors": [
+        "Alper Yıldırım"
+      ],
+      "published": "2026-05-06",
+      "pagerank_score": 0.009036,
+      "connections": 0
+    },
+    {
+      "rank": 20,
+      "arxiv_id": "2605.04746v2",
+      "title": "Distributed Energy System Design including Unbalanced AC Power Flow for Large LV Networks with ADMM",
+      "authors": [
+        "Robert Steven",
+        "Oleksiy V. Klymenko",
+        "Michael Short"
+      ],
+      "published": "2026-05-06",
+      "pagerank_score": 0.009036,
       "connections": 0
     }
   ],
   "network_stats": {
-    "nodes": 10,
-    "edges": 7,
-    "avg_clustering": 0.0,
-    "density": 0.1556
+    "nodes": 20,
+    "edges": 46,
+    "avg_clustering": 0.4915,
+    "density": 0.2421
   }
 }
