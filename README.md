@@ -8,16 +8,6 @@
 
 Paper Researcher 2.0 transforms research queries into ranked papers through **similarity network analysis** and **PageRank ranking**. Unlike traditional keyword matching, this agent identifies influential papers by analyzing the relationship structure between papers.
 
-### Key Differentiators from v1
-
-| Feature | v1 (BM25) | v2 (PageRank) |
-|---------|-----------|---------------|
-| Ranking method | BM25 + recency | TF-IDF similarity + PageRank |
-| Network analysis | Paper/author/category graph | Content similarity network |
-| Q&A approach | Single-turn | Multi-turn with context |
-| Architecture | 6 skills | 4 skills (simpler) |
-| Dependencies | rank_bm25, networkx | networkx only |
-
 ---
 
 ## Quick Start
